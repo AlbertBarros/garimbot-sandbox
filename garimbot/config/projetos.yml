@@ -1,0 +1,4 @@
+# Versão pública (sandbox): sem os projetos do dono. A nota de afinidade é
+# calculada só no computador do dono, com o projetos.yml completo.
+stack: [javascript, typescript, react, vite, node]
+projetos: []

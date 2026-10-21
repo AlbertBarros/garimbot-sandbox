@@ -1,0 +1,13 @@
+# Agendamento do Garimbot (fuso America/Sao_Paulo).
+# frequencia: desligado | semanal | dias | diario
+frequencia: semanal
+dia: domingo
+hora: "21:00"
+# para "dias": [segunda, quinta]; para "diario": horarios: ["08:00", "20:00"]
+dias: []
+horarios: []
+# temas da execução agendada (vazio = os 5 principais)
+temas: [seguranca, video, apis, whatsapp, redes-sociais]
+# checagem leve diária dos alertas de emergência (só script, sem IA)
+alerta_diario: true
+alerta_hora: "07:00"

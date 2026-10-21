@@ -1,0 +1,62 @@
+# Temas do Garimbot (menu quando você não diz o tema). Edite à vontade:
+# id (sem espaço), nome, termos de busca em português e inglês e, se quiser,
+# filtros extras da busca do GitHub (ex.: "language:typescript").
+temas:
+  - id: seguranca
+    nome: Segurança
+    termos: [security scanner, secret scanning, supply chain security, segurança aplicação web]
+  - id: video
+    nome: Edição e geração de vídeo
+    termos: [remotion, ffmpeg video editing, auto subtitles, video automation, edição de vídeo]
+  - id: apis
+    nome: APIs
+    termos: [api client, rest api toolkit, openapi generator, api gateway]
+  - id: whatsapp
+    nome: WhatsApp
+    termos: [whatsapp cloud api, whatsapp business api, whatsapp bot, whatsapp chatbot]
+    regra: whatsapp
+  - id: redes-sociais
+    nome: Redes sociais
+    termos: [social media scheduler, instagram api, tiktok api, social media analytics]
+  - id: agentes-ia
+    nome: Agentes de IA, skills e subagentes para Claude Code
+    termos: [claude code skills, claude code subagents, claude agents, agent skills]
+  - id: mcp
+    nome: Servidores MCP (conectores)
+    termos: [mcp server, model context protocol server, awesome mcp]
+  - id: automacao
+    nome: Automação de fluxos (alternativas a n8n/Zapier)
+    termos: [workflow automation, n8n alternative, zapier alternative]
+  - id: video-codigo
+    nome: Vídeo por código, legendas e transcrição
+    termos: [remotion template, ffmpeg wrapper, subtitle generator, whisper subtitles]
+  - id: voz
+    nome: "Voz: transcrição e texto para fala"
+    termos: [whisper transcription, text to speech, speech to text]
+  - id: pagamentos
+    nome: Pix, pagamentos, boletos e nota fiscal
+    termos: [pix brasil, boleto, nfe nfse, pix qrcode]
+  - id: crm-erp
+    nome: CRM/ERP, clientes e financeiro
+    termos: [open source crm, erp, invoicing, gestão financeira]
+  - id: react-ui
+    nome: Componentes React/Tailwind e dashboards
+    termos: [react tailwind components, react dashboard, shadcn]
+  - id: firebase-cloudflare
+    nome: Firebase e Cloudflare
+    termos: [firebase security rules, firebase template, cloudflare workers template, cloudflare pages]
+  - id: rag-ocr
+    nome: RAG, busca em documentos e OCR
+    termos: [rag, document search, ocr]
+  - id: social-analytics
+    nome: Agendamento e analytics de redes sociais
+    termos: [social media scheduling, social analytics dashboard]
+  - id: saude
+    nome: Saúde e bem-estar (Nina)
+    termos: [health tracker, habit tracker, medication reminder]
+  - id: lgpd-auth
+    nome: LGPD, autenticação e segurança web
+    termos: [lgpd, authentication, oauth, web security headers]
+  - id: testes
+    nome: Testes automatizados e qualidade de código
+    termos: [end to end testing, playwright, code quality, test automation]

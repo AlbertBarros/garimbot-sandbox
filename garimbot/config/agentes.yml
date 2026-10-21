@@ -1,0 +1,38 @@
+# Para quais agentes da agência cada achado serve (melhoria dos agentes).
+# Edite à vontade: id do agente (agency/team.json) e palavras que aparecem no
+# nome, descrição ou tópicos do repositório/pacote. Só sugere; nunca instala.
+agentes:
+  - id: video-motion
+    palavras: [remotion, ffmpeg, video, vídeo, subtitle, subtitles, caption, legenda, whisper, transcription, motion]
+  - id: sites-landing-pages
+    palavras: [landing page, tailwind, astro, gsap, framer motion, animation, website, site builder]
+  - id: design-criativos
+    palavras: [design, figma, image generation, imagem, canvas, svg, icons, thumbnail]
+  - id: copy-roteiros
+    palavras: [copywriting, roteiro, script writer, text generation, storytelling]
+  - id: social-publicacao
+    palavras: [instagram, tiktok, youtube, social media, scheduler, reels]
+  - id: automacoes-integracoes
+    palavras: [n8n, workflow, automation, automação, zapier, webhook, integration]
+  - id: crm-relacionamento
+    palavras: [crm, whatsapp, newsletter, email, e-mail, resend, mailing]
+  - id: ecommerce-marketplaces
+    palavras: [mercado livre, shopee, ecommerce, e-commerce, marketplace, tiktok shop]
+  - id: trafego-pago
+    palavras: [ads, meta ads, google ads, campaign, pixel]
+  - id: dados-performance
+    palavras: [analytics, dashboard, metrics, chart, charts, report]
+  - id: seo-google-empresas
+    palavras: [seo, sitemap, lighthouse, google business, schema.org]
+  - id: desenvolvimento-saas
+    palavras: [firebase, cloudflare, saas, auth, stripe, react, vite, typescript]
+  - id: qa-qualidade
+    palavras: [test, testing, playwright, vitest, jest, accessibility, qa]
+  - id: guardiao-seguranca
+    palavras: [security, segurança, secret scanning, vulnerability, scanner, supply chain]
+  - id: prontidao-tecnica
+    palavras: [debug, monitoring, logging, sentry, error tracking]
+  - id: financeiro-precificacao
+    palavras: [pix, boleto, invoice, nota fiscal, finance, financeiro, pricing]
+  - id: agencia-master
+    palavras: [claude, claude code, agent, agents, mcp, skill, skills, subagent]

@@ -1,0 +1,76 @@
+# Teste de funcionamento do Garimbot (pesado, SOB DEMANDA): vai no repositório
+# público "garimbot-sandbox" em .github/workflows/garimbot-teste.yml.
+# Roda numa máquina descartável do GitHub, sem nenhum segredo, e só para um
+# item JÁ APROVADO na auditoria. Aqui o código do repositório É executado
+# (instalação e testes do próprio projeto) — por isso nunca no seu PC.
+name: Garimbot teste de funcionamento
+on:
+  workflow_dispatch:
+    inputs:
+      repositorio:
+        description: "dono/repo já aprovado pelo Garimbot"
+        required: true
+      commit:
+        description: "Commit auditado (do relatório)"
+        required: true
+      mcp_comando:
+        description: "Se for servidor MCP: comando para iniciar (ex.: node dist/index.js)"
+        required: false
+permissions:
+  contents: read
+jobs:
+  testar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 24
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: "3.13"
+      - name: Clonar no commit auditado
+        env:
+          REPO: ${{ inputs.repositorio }}
+          COMMIT: ${{ inputs.commit }}
+        run: |
+          set -euo pipefail
+          [[ "$REPO" =~ ^[A-Za-z0-9-]{1,39}/[A-Za-z0-9._-]{1,100}$ ]] || { echo "repositório inválido"; exit 1; }
+          [[ "$COMMIT" =~ ^[0-9a-f]{40}$ ]] || { echo "commit inválido"; exit 1; }
+          git clone -c garimbot.audit=1 --no-recurse-submodules "https://github.com/$REPO.git" alvo
+          git -C alvo checkout --quiet --detach "$COMMIT"
+      - name: Instalar e testar (máquina descartável, sem segredos)
+        working-directory: alvo
+        run: |
+          set +e
+          {
+            echo "# Teste de funcionamento"
+            echo "Repositório: ${{ inputs.repositorio }} @ ${{ inputs.commit }}"
+            if [ -f package.json ]; then
+              if [ -f package-lock.json ]; then timeout 600 npm ci; else timeout 600 npm install; fi
+              echo "instalação: $?"
+              timeout 600 npm test --if-present
+              echo "testes: $?"
+            elif [ -f pyproject.toml ] || [ -f setup.py ]; then
+              python -m venv /tmp/v && timeout 600 /tmp/v/bin/pip install -e . ; echo "instalação: $?"
+              timeout 600 /tmp/v/bin/python -m pytest -q 2>/dev/null; echo "testes: $?"
+            else
+              echo "sem package.json nem pyproject: nada para testar"
+            fi
+          } 2>&1 | tail -n 300 > "$RUNNER_TEMP/resultado.txt"
+          cat "$RUNNER_TEMP/resultado.txt"
+      - name: Teste do MCP (lista as ferramentas e procura descrições envenenadas)
+        if: ${{ inputs.mcp_comando != '' }}
+        working-directory: alvo
+        env:
+          MCP_COMANDO: ${{ inputs.mcp_comando }}
+        run: |
+          node ../garimbot/scripts/garimbot.mjs mcp-teste -- $MCP_COMANDO | tee -a "$RUNNER_TEMP/resultado.txt"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: garimbot-teste
+          path: ${{ runner.temp }}/resultado.txt
+          retention-days: 7

@@ -1,0 +1,20 @@
+# Kits prontos (8.14, item 3): combinações de itens JÁ APROVADOS para um caso
+# completo. Cada peça: "Nome: palavra|palavra" (procura no nome, descrição e
+# tópicos dos aprovados). Se um item do kit for reprovado depois, o kit é
+# suspenso e você recebe o aviso.
+kits:
+  - id: saas-firebase
+    nome: SaaS com Firebase
+    pecas: ["Login e banco: firebase|auth|firestore", "Interface: react|tailwind|component library|ui kit", "Testes: playwright|vitest|testing"]
+  - id: whatsapp-agendamento
+    nome: Bot de WhatsApp com agendamento
+    pecas: ["WhatsApp oficial: whatsapp cloud api|whatsapp business", "Agenda: calendar|scheduling|booking|agenda", "Lembretes: cron|notification|queue|reminder"]
+  - id: crm
+    nome: CRM
+    pecas: ["Cadastro e funil: crm|pipeline|contacts", "E-mail: email|resend|newsletter", "Painel: dashboard|chart|analytics"]
+  - id: orcamento-pix
+    nome: Orçamento com Pix
+    pecas: ["PDF: pdf", "Pagamento: pix|payment|boleto", "Aprovação por link: signature|approval|link"]
+  - id: video-redes
+    nome: Vídeos para redes
+    pecas: ["Edição: remotion|ffmpeg|video", "Legendas: subtitle|caption|whisper|transcription", "Publicação: instagram|tiktok|youtube|scheduler"]

@@ -1,0 +1,21 @@
+# Uso e custo do Garimbot.
+# modo: economico (padrão) | completo. O econômico NUNCA verifica menos:
+# só usa scripts no trabalho pesado e audita menos candidatos por execução.
+modo: economico
+auditar_por_execucao:
+  economico: 25
+  completo: 40
+candidatos_busca: 100
+# busca de pacotes npm por tema (cada candidato consulta o registro)
+candidatos_busca_pacotes: 30
+# funções pesadas: só quando você pedir
+pesadas_sob_demanda: [teste-mcp, taxa-de-acerto, teste-de-ataque, teste-de-funcionamento]
+# avisa quando uma execução passar disso vezes a média
+alerta_acima_da_media: 2
+# tetos (minutos de máquina do sandbox e repositórios auditados)
+teto_execucao_minutos: 60
+teto_mes_execucoes: 8
+# nota mínima para notificar no celular (fase 3)
+nota_notificacao: 85
+# pastas: a quarentena é .garimbot/quarentena/ na pasta da agência (ignorada pelo
+# Git e liberada pelo Guard); veja garimbot/docs/CONTINUIDADE.md

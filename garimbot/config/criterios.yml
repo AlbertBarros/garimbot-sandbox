@@ -1,0 +1,32 @@
+# Critérios do Garimbot. Segurança é ELIMINATÓRIA (não é peso): qualquer
+# achado, de qualquer gravidade, ou verificação que não terminou = REPROVADO.
+# O aprendizado com as suas escolhas nunca mexe nesta parte de segurança.
+seguranca:
+  # ferramentas que precisam rodar em todo repositório auditado (sem elas, reprova)
+  obrigatorias: [garimbot-scanner, gitleaks, dependencias]
+  # extras que rodam no sandbox; se estiverem ligadas e falharem, reprova
+  extras: [semgrep, guarddog]
+  # dupla checagem: dois revisores independentes têm que aprovar
+  revisores: 2
+  # comitê depois dos revisores: só pode VETAR (licença, abandono, imitação, uso
+  # indevido). Sem a resposta do comitê, não vai para o .garimbot/aprovados.json
+  comite: true
+  # tamanho máximo do clone (MB); maior que isso não dá para analisar = reprova
+  clone_max_mb: 400
+prefiltro:
+  meses_sem_commit: 12
+  exige_licenca: true
+  # conta com menos dias que isso e mais estrelas que o limite = suspeita
+  conta_nova_dias: 90
+  conta_nova_estrelas: 300
+  ignorar_forks: true
+  # porteiro de pacotes: versão publicada há menos dias que isso = esperar (ataques costumam ser descobertos em dias)
+  versao_min_dias: 7
+pesos:
+  qualidade: 40
+  afinidade: 30
+  agentes: 15
+  potencial: 15
+# licenças que pedem atenção (uso comercial ou obrigam abrir o seu código)
+licencas_atencao: [GPL-2.0, GPL-3.0, AGPL-3.0, LGPL-2.1, LGPL-3.0, SSPL-1.0, BUSL-1.1, CC-BY-NC-4.0, CC-BY-NC-SA-4.0]
+entrega_maxima: 20
