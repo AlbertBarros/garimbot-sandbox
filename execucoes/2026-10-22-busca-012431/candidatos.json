@@ -1,0 +1,151 @@
+{
+  "id": "2026-10-22-busca-012431",
+  "tema": null,
+  "titulo": "microsoft/playwright-mcp, anthropics/skills, github/github-mcp-server, modelcontextprotocol/servers, coreyhaines31/marketingskills",
+  "regra": null,
+  "termos": [
+    "microsoft/playwright-mcp",
+    "anthropics/skills",
+    "github/github-mcp-server",
+    "modelcontextprotocol/servers",
+    "coreyhaines31/marketingskills"
+  ],
+  "data": "2026-10-22T01:24:33.764Z",
+  "modo": "completo",
+  "total": 10,
+  "aprovados": [
+    {
+      "nome": "microsoft/playwright-mcp",
+      "url": "https://github.com/microsoft/playwright-mcp",
+      "descricao": "Playwright MCP server",
+      "estrelas": 38479,
+      "forks": 3296,
+      "issues_abertas": 1,
+      "linguagem": "TypeScript",
+      "topicos": [
+        "mcp",
+        "playwright"
+      ],
+      "licenca": "Apache-2.0",
+      "arquivado": false,
+      "fork": false,
+      "criado": "2025-03-21T17:48:36Z",
+      "ultimo_push": "2026-10-22T00:03:07Z",
+      "ramo": "main",
+      "tamanho_kb": 1923,
+      "dono": {
+        "login": "microsoft",
+        "tipo": "Organization",
+        "criado": "2013-12-10T19:06:48Z",
+        "seguidores": 132284
+      },
+      "termo": "microsoft/playwright-mcp"
+    },
+    {
+      "nome": "prashantdce21MSFT/d365-fo-configuration-comparator",
+      "url": "https://github.com/prashantdce21MSFT/d365-fo-configuration-comparator",
+      "descricao": "VS Code extension to extract & compare Microsoft Dynamics 365 F&O form configurations across environments via MCP or Playwright (CDP).",
+      "estrelas": 15,
+      "forks": 1,
+      "issues_abertas": 0,
+      "linguagem": "Python",
+      "topicos": [],
+      "licenca": "MIT",
+      "arquivado": false,
+      "fork": false,
+      "criado": "2026-05-13T06:39:52Z",
+      "ultimo_push": "2026-05-30T23:15:50Z",
+      "ramo": "main",
+      "tamanho_kb": 454,
+      "dono": {
+        "login": "prashantdce21MSFT",
+        "tipo": "User",
+        "criado": "2026-04-18T12:14:11Z",
+        "seguidores": 3
+      },
+      "termo": "microsoft/playwright-mcp"
+    },
+    {
+      "nome": "xtr-dev/mcp-playwright-novnc",
+      "url": "https://github.com/xtr-dev/mcp-playwright-novnc",
+      "descricao": "A Docker image that runs the Microsoft Playwright MCP server with a virtual X11 display accessible via noVNC in your web browser.",
+      "estrelas": 14,
+      "forks": 4,
+      "issues_abertas": 1,
+      "linguagem": "JavaScript",
+      "topicos": [],
+      "licenca": "MIT",
+      "arquivado": false,
+      "fork": false,
+      "criado": "2025-11-29T18:52:55Z",
+      "ultimo_push": "2025-12-04T22:16:13Z",
+      "ramo": "main",
+      "tamanho_kb": 23,
+      "dono": {
+        "login": "xtr-dev",
+        "tipo": "Organization",
+        "criado": "2020-04-26T13:23:00Z",
+        "seguidores": 2
+      },
+      "termo": "microsoft/playwright-mcp"
+    },
+    {
+      "nome": "kc0577/edge-mcp-fast-control",
+      "url": "https://github.com/kc0577/edge-mcp-fast-control",
+      "descricao": "Connect Codex to your everyday Microsoft Edge with Playwright MCP: reuse logged-in sessions and run 5–15s browser workflows. 使用 Playwright MCP 快速直连日常 Edge。",
+      "estrelas": 2,
+      "forks": 0,
+      "issues_abertas": 0,
+      "linguagem": "PowerShell",
+      "topicos": [
+        "ai-agents",
+        "browser-automation",
+        "codex",
+        "mcp",
+        "microsoft-edge",
+        "playwright",
+        "windows"
+      ],
+      "licenca": "MIT",
+      "arquivado": false,
+      "fork": false,
+      "criado": "2026-08-09T04:19:27Z",
+      "ultimo_push": "2026-08-09T08:50:59Z",
+      "ramo": "main",
+      "tamanho_kb": 149,
+      "dono": {
+        "login": "kc0577",
+        "tipo": "User",
+        "criado": "2026-06-23T14:01:23Z",
+        "seguidores": 0
+      },
+      "termo": "microsoft/playwright-mcp"
+    }
+  ],
+  "descartados": [
+    {
+      "nome": "akshaykokane/semantic-kernel-playwright-mcp",
+      "motivo": "sem commits há mais de 12 meses"
+    },
+    {
+      "nome": "leestott/FoundryBrowserAutomation",
+      "motivo": "sem commits há mais de 12 meses"
+    },
+    {
+      "nome": "bftelman/skills",
+      "motivo": "sem licença"
+    },
+    {
+      "nome": "tancky777/article-extractor",
+      "motivo": "sem licença"
+    },
+    {
+      "nome": "nickweedon/playwright-proxy-mcp",
+      "motivo": "sem licença"
+    },
+    {
+      "nome": "vishwajeetdabholkar/markdown-mcp",
+      "motivo": "sem commits há mais de 12 meses"
+    }
+  ]
+}

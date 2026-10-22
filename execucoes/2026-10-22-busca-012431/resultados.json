@@ -1,0 +1,786 @@
+{
+  "id": "2026-10-22-busca-012431",
+  "resultados": [
+    {
+      "nome": "microsoft/playwright-mcp",
+      "url": "https://github.com/microsoft/playwright-mcp",
+      "data": "2026-10-22T01:24:33.859Z",
+      "commit": "ab6d67cbf8b619338f096980806fdbe29432cc4d",
+      "ferramentas": {
+        "garimbot-scanner": {
+          "ok": true,
+          "arquivos": 39
+        },
+        "gitleaks": {
+          "ok": true
+        },
+        "dependencias": {
+          "ok": true,
+          "metodo": "osv-scanner",
+          "pacotes": 5
+        },
+        "semgrep": {
+          "ok": true
+        },
+        "guarddog": {
+          "ok": true
+        }
+      },
+      "achados": [
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "roll.js",
+          "linha": 3,
+          "detalhe": "child_process: fs = require('fs');\nconst path = require('path');\nconst { execSync } = require('child_process');\n\nfunction copyConfig() {\n  const src = path.join(__dirname, '..', 'playwright', 'packages', 'playwright",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "tests/cli.spec.ts",
+          "linha": 16,
+          "detalhe": "child_process: language governing permissions and\n * limitations under the License.\n */\nimport child_process from 'child_process';\nimport path from 'path';\nimport { test, expect } from './fixtures';\n\nconst cliPath =",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "tests/library.spec.ts",
+          "linha": 16,
+          "detalhe": "child_process: language governing permissions and\n * limitations under the License.\n */\nimport child_process from 'child_process';\nimport fs from 'fs/promises';\nimport { test, expect } from './fixtures';\n\ntest('libr",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo",
+          "arquivo": "tests/testserver/key.pem",
+          "linha": 1,
+          "detalhe": "chave privada no arquivo (valor oculto)",
+          "ferramenta": "garimbot-scanner",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "update-readme.js",
+          "linha": 21,
+          "detalhe": "child_process: t fs = require('fs')\nconst path = require('path')\nconst { execSync } = require('child_process');\n\nconst { tools } = require('playwright-core/lib/coreBundle');\n\nconst capabilities = /** @type {Record<s",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "tests/testserver/key.pem",
+          "linha": 1,
+          "detalhe": "private-key no commit 1bc3c761de (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "@hono/node-server@1.19.14: GHSA-frvp-7c67-39w9 Node.js Adapter for Hono: Path traversal in `serve-static` on Windows via encoded backslash (`%5C`)",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "@modelcontextprotocol/sdk@1.31.0: GHSA-22jm-h49p-29qw MCP TypeScript SDK: Experimental tasks were not tied to the session that created them",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "@modelcontextprotocol/sdk@1.31.0: GHSA-46jr-4wx8-v453 MCP TypeScript SDK: One HTTP request within the default size limit could exhaust server memory during validation",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "@modelcontextprotocol/sdk@1.31.0: GHSA-6prh-2h8m-c8cw MCP TypeScript client SDK: HTTP client transports and OAuth requests followed cross-origin redirects and re-sent custom ",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "@modelcontextprotocol/sdk@1.31.0: GHSA-rvq5-wwqv-78pq MCP TypeScript SDK: Server bearer authentication accepted tokens issued for another service",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "body-parser@2.2.2: GHSA-v422-hmwv-36x6 body-parser vulnerable to denial of service when invalid limit value silently disables size enforcement",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "qs@6.15.2: GHSA-4mjr-xmp4-gh2g qs: Denial of Service via Attacker Controlled isBuffer",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "qs@6.15.2: GHSA-x5fp-wj9c-mxmx qs array-limit bypass via bracket-key comma parsing",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "guarddog:capability-filesystem-delete",
+          "arquivo": "",
+          "detalhe": "[{\"location\":\"update-readme.js:165\",\"code\":\"  const output = fs.readFileSync('help.txt');\\n  fs.unlinkSync('help.txt');\\n  const lines = output.toString().split('\\\\n');\\n  const firstLine = lines.find",
+          "ferramenta": "guarddog",
+          "regra_revisada": "função esperada da ferramenta: o revisor confere se combina com o que ela faz"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "guarddog:capability-filesystem-read",
+          "arquivo": "",
+          "detalhe": "[{\"location\":\"roll.js:8\",\"code\":\"  const dst = path.join(__dirname, 'config.d.ts');\\n  let content = fs.readFileSync(src, 'utf-8');\\n  content = content.replace(\\n    /^import type \\\\* as playwright f",
+          "ferramenta": "guarddog",
+          "regra_revisada": "função esperada da ferramenta: o revisor confere se combina com o que ela faz"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "guarddog:capability-network-outbound",
+          "arquivo": "",
+          "detalhe": "[{\"location\":\"tests/cli.spec.ts:20\",\"code\":\"const cliPath = path.resolve(__dirname, '..', 'cli.js');\\n\\ntest('install-browser --help', async () => {\",\"match\":\"resolve(\",\"message\":\"Detects network requ",
+          "ferramenta": "guarddog",
+          "regra_revisada": "função esperada da ferramenta: o revisor confere se combina com o que ela faz"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "guarddog:capability-process-spawn",
+          "arquivo": "",
+          "detalhe": "[{\"location\":\"roll.js:3\",\"code\":\"const path = require('path');\\nconst { execSync } = require('child_process');\\n\\nfunction copyConfig() {\",\"match\":\"require('child_process')\",\"message\":\"Detects process",
+          "ferramenta": "guarddog",
+          "regra_revisada": "função esperada da ferramenta: o revisor confere se combina com o que ela faz"
+        }
+      ],
+      "tamanho_mb": 3,
+      "licenca": {
+        "spdx": "Apache-2.0",
+        "atencao": false
+      },
+      "incompletas": [],
+      "bloqueios": 0,
+      "revisar": 18,
+      "script": "PARA_REVISAO",
+      "candidato": {
+        "nome": "microsoft/playwright-mcp",
+        "url": "https://github.com/microsoft/playwright-mcp",
+        "descricao": "Playwright MCP server",
+        "estrelas": 38479,
+        "forks": 3296,
+        "issues_abertas": 1,
+        "linguagem": "TypeScript",
+        "topicos": [
+          "mcp",
+          "playwright"
+        ],
+        "licenca": "Apache-2.0",
+        "arquivado": false,
+        "fork": false,
+        "criado": "2025-03-21T17:48:36Z",
+        "ultimo_push": "2026-10-22T00:03:07Z",
+        "ramo": "main",
+        "tamanho_kb": 1923,
+        "dono": {
+          "login": "microsoft",
+          "tipo": "Organization",
+          "criado": "2013-12-10T19:06:48Z",
+          "seguidores": 132284
+        },
+        "termo": "microsoft/playwright-mcp"
+      },
+      "cache": null
+    },
+    {
+      "nome": "prashantdce21MSFT/d365-fo-configuration-comparator",
+      "url": "https://github.com/prashantdce21MSFT/d365-fo-configuration-comparator",
+      "data": "2026-10-22T01:24:42.978Z",
+      "commit": "580ea92e90eb0720b76a1db6abad4f410462430f",
+      "ferramentas": {
+        "garimbot-scanner": {
+          "ok": true,
+          "arquivos": 101
+        },
+        "gitleaks": {
+          "ok": true
+        },
+        "dependencias": {
+          "ok": true,
+          "metodo": "osv-scanner",
+          "pacotes": 5
+        },
+        "semgrep": {
+          "ok": true
+        },
+        "guarddog": {
+          "ok": true
+        }
+      },
+      "achados": [
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "archive/python/categorize_items.py",
+          "linha": 216,
+          "detalhe": "comando do sistema (Python): port Font, PatternFill, Alignment, Border, Side\n    except ImportError:\n        os.system(\"pip install openpyxl\")\n        from openpyxl import Workbook\n        from openpyxl.styles import Font, Patter",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "archive/python/generate_cdd_excel.py",
+          "linha": 13,
+          "detalhe": "comando do sistema (Python): xl.utils import get_column_letter\nexcept ImportError:\n    import subprocess\n    subprocess.run([\"pip\", \"install\", \"openpyxl\"], shell=True)\n    from openpyxl import Workbook\n    from openpyxl.styles im",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "src/chrome.ts",
+          "linha": 4,
+          "detalhe": "child_process: t * as fs from \"fs\";\nimport * as path from \"path\";\nimport { spawn, exec } from \"child_process\";\nimport * as http from \"http\";\nimport * as os from \"os\";\n\nfunction existsExe(p: string): boolean {\n    tr",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "src/extractor.ts",
+          "linha": 3,
+          "detalhe": "child_process: * as vscode from \"vscode\";\nimport * as path from \"path\";\nimport { spawn } from \"child_process\";\n\nfunction runCmd(cmd: string, args: string[]): Promise<{ code: number; stdout: string; stderr: string }>",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "src/formPaths.ts",
+          "linha": 3,
+          "detalhe": "child_process: * as vscode from \"vscode\";\nimport * as path from \"path\";\nimport { spawn } from \"child_process\";\nimport { startChromeCdp } from \"./chrome\";\n\nexport interface FormPathEntry {\n    path: string;\n    menuI",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "src/onboarding.ts",
+          "linha": 3,
+          "detalhe": "child_process: as vscode from \"vscode\";\nimport * as https from \"https\";\nimport { spawn } from \"child_process\";\n\nconst SECRET_KEY_CLIENT_SECRET = \"d365FormExtractor.mcpClientSecret\";\n\ninterface EnvEntry {\n    label: ",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "brace-expansion@1.1.14: GHSA-3jxr-9vmj-r5cp brace-expansion: DoS via exponential-time expansion of consecutive non-expanding {} groups",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "brace-expansion@1.1.14: GHSA-6j4f-fj2g-mc7p brace-expansion: DoS via uncontrolled recursion in parseCommaParts causing stack exhaustion",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "brace-expansion@1.1.14: GHSA-mh99-v99m-4gvg brace-expansion: DoS via unbounded expansion length causing an out-of-memory process crash",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "brace-expansion@1.1.14: GHSA-q2hr-2g5m-vwhr brace-expansion: Quadratic-time expansion of the `{a},b}` rewrite causes CPU denial of service",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "brace-expansion@1.1.14: GHSA-qhr7-859c-m2p7 brace-expansion: DoS via uncontrolled recursion on nested brace groups causing stack exhaustion",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "esbuild@0.20.2: GHSA-67mh-4wv8-2f99 esbuild enables any website to send any requests to the development server and read the response",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "form-data@4.0.5: GHSA-hmw2-7cc7-3qxx form-data: CRLF injection in form-data via unescaped multipart field names and filenames",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "linkify-it@3.0.3: GHSA-22p9-wv53-3rq4 LinkifyIt#match scan loop has quadratic algorithmic complexity",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "linkify-it@3.0.3: GHSA-v245-v573-v5vm linkify-it: Quadratic-complexity DoS via the `mailto:` validator scan-loop on attacker text",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "markdown-it@12.3.2: GHSA-253c-mchw-3w2r markdown-it linkify: true has two quadratic paths, so a few hundred KB of markdown blocks the event loop for tens of sec",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "markdown-it@12.3.2: GHSA-6v5v-wf23-fmfq markdown-it: Quadratic complexity DoS in smartquotes rule via replaceAt string operations",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "markdown-it@12.3.2: GHSA-r7fv-28h4-cvq7 markdown-it: Quadratic complexity in smartquotes with unmatched closing quotes",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "markdown-it@12.3.2: GHSA-vfgh-jcmw-g37q markdown-it: Quadratic-time denial of service in inline HTML parsing with html enabled",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "qs@6.15.1: GHSA-4mjr-xmp4-gh2g qs: Denial of Service via Attacker Controlled isBuffer",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "qs@6.15.1: GHSA-q8mj-m7cp-5q26 qs has a remotely triggerable DoS: qs.stringify crashes with TypeError on null/undefined entries in comma-format arrays ",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "qs@6.15.1: GHSA-x5fp-wj9c-mxmx qs array-limit bypass via bracket-key comma parsing",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "tmp@0.2.5: GHSA-ph9p-34f9-6g65 tmp has Path Traversal via unsanitized prefix/postfix that enables directory escape",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "undici@7.25.0: GHSA-2gqq-gqf2-x968 undici vulnerable to response truncation via oversized chunked responses in the dump interceptor",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "undici@7.25.0: GHSA-2jfj-6hjv-fm6j undici vulnerable to cross-user cookie disclosure via Set-Cookie caching in shared caches",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "undici@7.25.0: GHSA-35p6-xmwp-9g52 undici vulnerable to HTTP response queue poisoning via keep-alive socket reuse",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "undici@7.25.0: GHSA-3xpg-4rpp-hhhm undici vulnerable to Denial of Service via unbounded decompression of compressed responses",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "undici@7.25.0: GHSA-4cwx-7wf7-3272 undici vulnerable to cross-user information disclosure and parse-time crash via degenerate private cache directives",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "semgrep:subprocess-shell-true",
+          "arquivo": "archive/python/download_screenshots.py",
+          "linha": 18,
+          "detalhe": "Found 'subprocess' function 'run' with 'shell=True'. This is dangerous because this call will spawn the command using a shell process. Doing so propagates current shell settings and variables, which m",
+          "ferramenta": "semgrep",
+          "regra_revisada": "padrão de código: o revisor confere se é risco real"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "semgrep:dynamic-urllib-use-detected",
+          "arquivo": "archive/python/download_screenshots.py",
+          "linha": 26,
+          "detalhe": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib call",
+          "ferramenta": "semgrep"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "semgrep:subprocess-shell-true",
+          "arquivo": "archive/python/fetch_all_ado_items.py",
+          "linha": 21,
+          "detalhe": "Found 'subprocess' function 'run' with 'shell=True'. This is dangerous because this call will spawn the command using a shell process. Doing so propagates current shell settings and variables, which m",
+          "ferramenta": "semgrep",
+          "regra_revisada": "padrão de código: o revisor confere se é risco real"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "semgrep:dynamic-urllib-use-detected",
+          "arquivo": "archive/python/fetch_all_ado_items.py",
+          "linha": 30,
+          "detalhe": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib call",
+          "ferramenta": "semgrep"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "semgrep:dynamic-urllib-use-detected",
+          "arquivo": "archive/python/fetch_all_ado_items.py",
+          "linha": 39,
+          "detalhe": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib call",
+          "ferramenta": "semgrep"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "semgrep:subprocess-shell-true",
+          "arquivo": "archive/python/generate_cdd_excel.py",
+          "linha": 13,
+          "detalhe": "Found 'subprocess' function 'run' with 'shell=True'. This is dangerous because this call will spawn the command using a shell process. Doing so propagates current shell settings and variables, which m",
+          "ferramenta": "semgrep",
+          "regra_revisada": "padrão de código: o revisor confere se é risco real"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "semgrep:detect-child-process",
+          "arquivo": "src/extractor.ts",
+          "linha": 7,
+          "detalhe": "Detected calls to child_process from a function argument `cmd`. This could lead to a command injection if the input is user controllable. Try to avoid calls to child_process, and if it is needed ensur",
+          "ferramenta": "semgrep",
+          "regra_revisada": "padrão de código: o revisor confere se é risco real"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "semgrep:detect-child-process",
+          "arquivo": "src/onboarding.ts",
+          "linha": 30,
+          "detalhe": "Detected calls to child_process from a function argument `cmd`. This could lead to a command injection if the input is user controllable. Try to avoid calls to child_process, and if it is needed ensur",
+          "ferramenta": "semgrep",
+          "regra_revisada": "padrão de código: o revisor confere se é risco real"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "guarddog:capability-filesystem-read",
+          "arquivo": "",
+          "detalhe": "[{\"location\":\"archive/python/download_screenshots.py:27\",\"code\":\"    with urllib.request.urlopen(req, timeout=30) as resp:\\n        data = resp.read()\\n    with open(save_path, \\\"wb\\\") as f:\\n        ",
+          "ferramenta": "guarddog",
+          "regra_revisada": "função esperada da ferramenta: o revisor confere se combina com o que ela faz"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "guarddog:capability-network-download",
+          "arquivo": "",
+          "detalhe": "[{\"location\":\"archive/python/download_screenshots.py:26\",\"code\":\"    req.add_header(\\\"Authorization\\\", f\\\"Bearer {token}\\\")\\n    with urllib.request.urlopen(req, timeout=30) as resp:\\n        data = r",
+          "ferramenta": "guarddog",
+          "regra_revisada": "função esperada da ferramenta: o revisor confere se combina com o que ela faz"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "guarddog:capability-network-outbound",
+          "arquivo": "",
+          "detalhe": "[{\"location\":\"archive/local-replica/shared_lib/d365_mcp_client.py:40\",\"code\":\"        }\\n        resp = requests.post(token_url, data=payload, timeout=30)\\n        resp.raise_for_status()\\n        dat",
+          "ferramenta": "guarddog",
+          "regra_revisada": "função esperada da ferramenta: o revisor confere se combina com o que ela faz"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "guarddog:capability-process-spawn",
+          "arquivo": "",
+          "detalhe": "[{\"location\":\"archive/python/batch_compare_v2.py:56\",\"code\":\"        import subprocess\\n        subprocess.run([sys.executable, \\\"-m\\\", \\\"pip\\\", \\\"install\\\", \\\"openpyxl\\\"], capture_output=True)\\n     ",
+          "ferramenta": "guarddog",
+          "regra_revisada": "função esperada da ferramenta: o revisor confere se combina com o que ela faz"
+        },
+        {
+          "nivel": "bloqueio",
+          "regra": "guarddog:threat-process-download-exec",
+          "arquivo": "",
+          "detalhe": "[{\"location\":\"archive/python/batch_compare_v2.py:56\",\"code\":\"        import subprocess\\n        subprocess.run([sys.executable, \\\"-m\\\", \\\"pip\\\", \\\"install\\\", \\\"openpyxl\\\"], capture_output=True)\\n     ",
+          "ferramenta": "guarddog"
+        },
+        {
+          "nivel": "bloqueio",
+          "regra": "guarddog:threat-process-spawn-silent",
+          "arquivo": "",
+          "detalhe": "[{\"location\":\"src/chrome.ts:84\",\"code\":\"    out.appendLine(`Launching: \\\"${chrome}\\\" ${args.join(\\\" \\\")}`);\\n    const p = spawn(chrome, args, { detached: true, stdio: \\\"ignore\\\", windowsHide: false }",
+          "ferramenta": "guarddog"
+        }
+      ],
+      "tamanho_mb": 4,
+      "licenca": {
+        "spdx": "MIT",
+        "atencao": false
+      },
+      "incompletas": [],
+      "bloqueios": 2,
+      "revisar": 40,
+      "script": "REPROVADO",
+      "candidato": {
+        "nome": "prashantdce21MSFT/d365-fo-configuration-comparator",
+        "url": "https://github.com/prashantdce21MSFT/d365-fo-configuration-comparator",
+        "descricao": "VS Code extension to extract & compare Microsoft Dynamics 365 F&O form configurations across environments via MCP or Playwright (CDP).",
+        "estrelas": 15,
+        "forks": 1,
+        "issues_abertas": 0,
+        "linguagem": "Python",
+        "topicos": [],
+        "licenca": "MIT",
+        "arquivado": false,
+        "fork": false,
+        "criado": "2026-05-13T06:39:52Z",
+        "ultimo_push": "2026-05-30T23:15:50Z",
+        "ramo": "main",
+        "tamanho_kb": 454,
+        "dono": {
+          "login": "prashantdce21MSFT",
+          "tipo": "User",
+          "criado": "2026-04-18T12:14:11Z",
+          "seguidores": 3
+        },
+        "termo": "microsoft/playwright-mcp"
+      },
+      "cache": null
+    },
+    {
+      "nome": "xtr-dev/mcp-playwright-novnc",
+      "url": "https://github.com/xtr-dev/mcp-playwright-novnc",
+      "data": "2026-10-22T01:24:55.605Z",
+      "commit": "14e19db8b5c20cc14d2f5acf6e80bbadac05e731",
+      "ferramentas": {
+        "garimbot-scanner": {
+          "ok": true,
+          "arquivos": 11
+        },
+        "gitleaks": {
+          "ok": true
+        },
+        "dependencias": {
+          "ok": true,
+          "metodo": "osv-scanner",
+          "pacotes": 0
+        },
+        "semgrep": {
+          "ok": true
+        },
+        "guarddog": {
+          "ok": true
+        }
+      },
+      "achados": [
+        {
+          "nivel": "revisar",
+          "regra": "workflow-perigoso",
+          "arquivo": ".github/workflows/docker.yml",
+          "linha": 22,
+          "detalhe": "action de terceiro sem versão fixa (SHA): docker/setup-buildx-action@v3",
+          "ferramenta": "garimbot-scanner",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "workflow-perigoso",
+          "arquivo": ".github/workflows/docker.yml",
+          "linha": 26,
+          "detalhe": "action de terceiro sem versão fixa (SHA): docker/login-action@v3",
+          "ferramenta": "garimbot-scanner",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "workflow-perigoso",
+          "arquivo": ".github/workflows/docker.yml",
+          "linha": 34,
+          "detalhe": "action de terceiro sem versão fixa (SHA): docker/metadata-action@v5",
+          "ferramenta": "garimbot-scanner",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "workflow-perigoso",
+          "arquivo": ".github/workflows/docker.yml",
+          "linha": 45,
+          "detalhe": "action de terceiro sem versão fixa (SHA): docker/build-push-action@v5",
+          "ferramenta": "garimbot-scanner",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        }
+      ],
+      "tamanho_mb": 1,
+      "licenca": {
+        "spdx": "MIT",
+        "atencao": false
+      },
+      "incompletas": [],
+      "bloqueios": 0,
+      "revisar": 4,
+      "script": "PARA_REVISAO",
+      "candidato": {
+        "nome": "xtr-dev/mcp-playwright-novnc",
+        "url": "https://github.com/xtr-dev/mcp-playwright-novnc",
+        "descricao": "A Docker image that runs the Microsoft Playwright MCP server with a virtual X11 display accessible via noVNC in your web browser.",
+        "estrelas": 14,
+        "forks": 4,
+        "issues_abertas": 1,
+        "linguagem": "JavaScript",
+        "topicos": [],
+        "licenca": "MIT",
+        "arquivado": false,
+        "fork": false,
+        "criado": "2025-11-29T18:52:55Z",
+        "ultimo_push": "2025-12-04T22:16:13Z",
+        "ramo": "main",
+        "tamanho_kb": 23,
+        "dono": {
+          "login": "xtr-dev",
+          "tipo": "Organization",
+          "criado": "2020-04-26T13:23:00Z",
+          "seguidores": 2
+        },
+        "termo": "microsoft/playwright-mcp"
+      },
+      "cache": null
+    },
+    {
+      "nome": "kc0577/edge-mcp-fast-control",
+      "url": "https://github.com/kc0577/edge-mcp-fast-control",
+      "data": "2026-10-22T01:24:59.992Z",
+      "commit": "20c38124defaf85e3f0a98b9cd7fc79836364d3e",
+      "ferramentas": {
+        "garimbot-scanner": {
+          "ok": true,
+          "arquivos": 20
+        },
+        "gitleaks": {
+          "ok": true
+        },
+        "dependencias": {
+          "ok": true,
+          "metodo": "osv-scanner",
+          "pacotes": 0
+        },
+        "semgrep": {
+          "ok": true
+        },
+        "guarddog": {
+          "ok": true
+        }
+      },
+      "achados": [],
+      "tamanho_mb": 1,
+      "licenca": {
+        "spdx": "MIT",
+        "atencao": false
+      },
+      "incompletas": [],
+      "bloqueios": 0,
+      "revisar": 0,
+      "script": "PARA_REVISAO",
+      "candidato": {
+        "nome": "kc0577/edge-mcp-fast-control",
+        "url": "https://github.com/kc0577/edge-mcp-fast-control",
+        "descricao": "Connect Codex to your everyday Microsoft Edge with Playwright MCP: reuse logged-in sessions and run 5–15s browser workflows. 使用 Playwright MCP 快速直连日常 Edge。",
+        "estrelas": 2,
+        "forks": 0,
+        "issues_abertas": 0,
+        "linguagem": "PowerShell",
+        "topicos": [
+          "ai-agents",
+          "browser-automation",
+          "codex",
+          "mcp",
+          "microsoft-edge",
+          "playwright",
+          "windows"
+        ],
+        "licenca": "MIT",
+        "arquivado": false,
+        "fork": false,
+        "criado": "2026-08-09T04:19:27Z",
+        "ultimo_push": "2026-08-09T08:50:59Z",
+        "ramo": "main",
+        "tamanho_kb": 149,
+        "dono": {
+          "login": "kc0577",
+          "tipo": "User",
+          "criado": "2026-06-23T14:01:23Z",
+          "seguidores": 0
+        },
+        "termo": "microsoft/playwright-mcp"
+      },
+      "cache": null
+    }
+  ],
+  "minutos": 0.5,
+  "nao_auditados": []
+}
