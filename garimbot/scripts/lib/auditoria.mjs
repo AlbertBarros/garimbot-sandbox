@@ -5,7 +5,7 @@
 // quando o script reprova).
 import { mkdir, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
-import { escanear } from "./scanner.mjs";
+import { escanear, ehArquivoIa } from "./scanner.mjs";
 import { rodar, gitleaks, dependencias, semgrep, guarddog } from "./ferramentas.mjs";
 import { pastaDoRepo } from "./base.mjs";
 import { baixarPacote, achadosDoManifesto } from "./pacotes.mjs";
@@ -148,7 +148,7 @@ const REBAIXA_SEMPRE = new Set(["dependencia-vulneravel", "dependencia-sem-versa
 const REBAIXA_EM_TESTE = new Set(["segredo", "segredo-vazado", "dados-sensiveis"]);
 const PARECE_SEGREDO = /secret|credential|private[-_]?key|service[-_]?account|token|api[-_]?key|password/i;
 // arquivos que os agentes de IA leem como instrução: injeção neles nunca é rebaixada
-const ARQUIVO_DE_IA = /(^|\/)(CLAUDE|AGENTS|GEMINI|SKILL)\.md$|\.cursorrules$|copilot-instructions\.md$|(^|\/)\.claude\/|\.mcp\.json$/i;
+// (a mesma lista do scanner: ARQUIVOS_IA)
 // comentário escondido que manda baixar ou rodar algo continua reprovando
 const MANDA_EXECUTAR = /curl|wget|\|\s*(sh|bash|iex)\b|powershell|invoke-|https?:\/\//i;
 export function revisaoHumana(achado) {
@@ -156,7 +156,7 @@ export function revisaoHumana(achado) {
   const regra = String(achado.regra ?? "");
   const arquivo = String(achado.arquivo ?? "").replace(/^\/+/, "");
   const emTeste = TESTE_OU_DOC.test(arquivo);
-  if ((regra === "injecao-de-prompt" || regra === "comentario-escondido") && ARQUIVO_DE_IA.test(arquivo)) return null;
+  if ((regra === "injecao-de-prompt" || regra === "comentario-escondido") && ehArquivoIa(arquivo)) return null;
   if (regra === "comentario-escondido" && MANDA_EXECUTAR.test(String(achado.detalhe ?? ""))) return null;
   if (REBAIXA_SEMPRE.has(regra)) return "comum em projeto grande: o revisor confere se afeta o nosso uso";
   if (regra.startsWith("guarddog:capability-")) return "função esperada da ferramenta: o revisor confere se combina com o que ela faz";

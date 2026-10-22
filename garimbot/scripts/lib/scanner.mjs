@@ -14,6 +14,9 @@ export const ARQUIVOS_IA = [
   /(^|\/)CLAUDE\.md$/i, /(^|\/)AGENTS\.md$/i, /(^|\/)GEMINI\.md$/i, /(^|\/)\.cursorrules$/i,
   /(^|\/)\.windsurfrules$/i, /(^|\/)\.cursor\/rules\//i, /(^|\/)\.github\/copilot-instructions\.md$/i,
   /(^|\/)\.claude\//i, /(^|\/)\.mcp\.json$/i, /(^|\/)\.clinerules/i, /(^|\/)\.github\/instructions\//i,
+  // skills e plugins (Claude Code, Codex): o repositório inteiro pode ser instrução para IA
+  /(^|\/)SKILL\.md$/i, /(^|\/)\.claude-plugin\//i, /(^|\/)\.codex-plugin\//i, /(^|\/)\.agents\//i,
+  /(^|\/)\.codex\//i, /(^|\/)\.gemini\//i, /(^|\/)(agents|commands)\/[^/]+\.md$/i,
 ];
 export const ehArquivoIa = (rel) => ARQUIVOS_IA.some((r) => r.test(rel));
 const EXEC_EXT = /\.(exe|dll|so|dylib|node|bin|msi|apk|app|scr|com|class|jar|pyc|pyo|pkl|pickle|pt|pth|ckpt|joblib)$/i;
