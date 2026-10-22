@@ -76,6 +76,26 @@ jobs:
             ID=$(node -e 'console.log(JSON.parse(require("fs").readFileSync("busca.json","utf8")).id)')
             node garimbot/scripts/garimbot.mjs auditar "$ID" | tee saida.json
           fi
+      - name: Resumo dos motivos (regra, arquivo e linha; nada do repositório é executado)
+        if: always()
+        run: |
+          node -e '
+          const fs = require("fs"), path = require("path");
+          const base = "trabalho/.garimbot/quarentena/_execucoes";
+          for (const e of fs.existsSync(base) ? fs.readdirSync(base) : []) {
+            const f = path.join(base, e, "resultados.json");
+            if (!fs.existsSync(f)) continue;
+            for (const r of JSON.parse(fs.readFileSync(f, "utf8")).resultados ?? []) {
+              console.log(`== ${r.nome} @ ${String(r.commit).slice(0, 12)}: ${r.script} · bloqueios ${r.bloqueios} · revisar ${r.revisar}`);
+              if (r.incompletas?.length) console.log("   verificações não concluídas: " + r.incompletas.join(", "));
+              for (const [n, t] of Object.entries(r.ferramentas ?? {}))
+                console.log(`   ${n}: ${t.ok ? "ok" : "FALHOU · " + String(t.erro ?? "").slice(0, 160)}`);
+              const bloq = (r.achados ?? []).filter((a) => a.nivel === "bloqueio");
+              for (const a of bloq.slice(0, 40))
+                console.log(`   - ${a.regra} · ${a.arquivo ?? ""}${a.linha ? ":" + a.linha : ""}`);
+              if (bloq.length > 40) console.log(`   (+${bloq.length - 40} bloqueios)`);
+            }
+          }'
       - name: Guardar o resultado (pacotes de revisão + código dos que passaram no script)
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
