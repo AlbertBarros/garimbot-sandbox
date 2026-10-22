@@ -22,6 +22,7 @@
 // revisões são de dois subagentes garimbot-auditor (só leitura) e o comitê
 // (garimbot-conselheiro) só pode vetar. Aprovado vai para .garimbot/aprovados.json.
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { readFile, writeFile, mkdir, readdir, rm } from "node:fs/promises";
 import { configs, pastas, AGENCIA, lerJson, gravarJson, memoria, registrar, idExecucao, nomeRepo, pastaDoRepo, RELATORIOS } from "./lib/base.mjs";
 import { buscar, buscarNpm, completarDonos, prefiltrar, dadosDoRepo, aplicarFiltros } from "./lib/busca.mjs";
@@ -594,5 +595,6 @@ async function main() {
       sai("Comandos: temas | buscar | auditar | analisar | pacotes | revisao | fechar | clonar | usar | guard | alertas | reauditar | semanal | pendentes | emergencia | agendar | ignorar | melhorias | projeto | resumo | teste | kit | taxa | ataque | servidor | fila | transformar | auditar-pasta | mcp-teste");
   }
 }
-if (process.argv[1] && path.resolve(process.argv[1]) === path.resolve(new URL(import.meta.url).pathname))
+// fileURLToPath: no Windows, o pathname da URL vira "/C:/..." e nunca bateria com o caminho
+if (process.argv[1] && path.resolve(process.argv[1]).toLowerCase() === fileURLToPath(import.meta.url).toLowerCase())
   main().catch((e) => sai("Garimbot: " + e.message));

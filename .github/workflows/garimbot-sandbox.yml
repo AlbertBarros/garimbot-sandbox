@@ -20,6 +20,9 @@ on:
         description: "economico (padrão) ou completo"
         required: false
         default: economico
+      maximo:
+        description: "Quantos repositórios auditar nesta execução (vazio = o padrão do modo)"
+        required: false
 permissions:
   contents: read
 concurrency:
@@ -65,9 +68,14 @@ jobs:
           TERMOS: ${{ inputs.termos }}
           LINK: ${{ inputs.link }}
           MODO: ${{ inputs.modo }}
+          MAXIMO: ${{ inputs.maximo }}
         run: |
           set -euo pipefail
           sed -i "s/^modo: .*/modo: ${MODO:-economico}/" garimbot/config/limites.yml
+          if [ -n "${MAXIMO:-}" ]; then
+            case "$MAXIMO" in (*[!0-9]*) echo "máximo inválido"; exit 1;; esac
+            sed -i "s/^  ${MODO:-economico}: .*/  ${MODO:-economico}: $MAXIMO/; s/^candidatos_busca: .*/candidatos_busca: $MAXIMO/" garimbot/config/limites.yml
+          fi
           if [ -n "$LINK" ]; then
             node garimbot/scripts/garimbot.mjs analisar "$LINK" | tee saida.json
           else
@@ -103,3 +111,36 @@ jobs:
           path: trabalho/.garimbot/quarentena/_execucoes/
           retention-days: 7
           include-hidden-files: true
+  # Publica os resultados (só JSON e HTML; nunca o código auditado) no branch
+  # "resultados", para a agência ler por git. Este job não toca no código de
+  # terceiros: só copia os arquivos de resultado do artefato do job anterior.
+  publicar:
+    needs: garimpar
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: garimbot-execucao
+          path: execucao
+      - name: Gravar no branch resultados
+        env:
+          TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          RUN_ID: ${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          find execucao -type d -name repos -prune -exec rm -rf {} +
+          find execucao -type f ! -name '*.json' ! -name '*.html' -delete
+          git init -q pub
+          cd pub
+          git remote add origin "https://x-access-token:${TOKEN}@github.com/${REPO}.git"
+          if git fetch -q --depth 1 origin resultados; then git checkout -q -B resultados FETCH_HEAD; else git checkout -q --orphan resultados; fi
+          mkdir -p execucoes
+          cp -r ../execucao/. execucoes/
+          git add -A execucoes
+          git -c user.name=garimbot -c user.email=garimbot@users.noreply.github.com commit -qm "Execução ${RUN_ID}" || exit 0
+          git push -q origin resultados

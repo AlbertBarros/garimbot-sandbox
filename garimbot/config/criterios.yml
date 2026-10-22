@@ -1,5 +1,6 @@
 # Critérios do Garimbot. Segurança é ELIMINATÓRIA (não é peso): qualquer
-# achado, de qualquer gravidade, ou verificação que não terminou = REPROVADO.
+# bloqueio ou verificação que não terminou = REPROVADO; achado "revisar" vai
+# para a dupla checagem (basta um revisor reprovar).
 # O aprendizado com as suas escolhas nunca mexe nesta parte de segurança.
 seguranca:
   # ferramentas que precisam rodar em todo repositório auditado (sem elas, reprova)
@@ -11,6 +12,12 @@ seguranca:
   # comitê depois dos revisores: só pode VETAR (licença, abandono, imitação, uso
   # indevido). Sem a resposta do comitê, não vai para o .garimbot/aprovados.json
   comite: true
+  # Regra revisada (decisão do dono, 22/10/2026): dependência com falha conhecida,
+  # workflow do próprio projeto, comentário escondido/instrução em documentação,
+  # "poderes" esperados (GuardDog capability-*), padrões do Semgrep e segredos
+  # só em teste/exemplo/documentação vão para a dupla checagem em vez de
+  # reprovar sozinhos (auditoria.mjs: revisaoHumana). O resto continua eliminatório.
+  revisao_humana: true
   # tamanho máximo do clone (MB); maior que isso não dá para analisar = reprova
   clone_max_mb: 400
 prefiltro:
