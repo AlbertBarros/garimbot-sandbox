@@ -1,0 +1,82 @@
+{
+  "id": "2026-10-28-analise-albertbarros-security-auditor-cl-001034",
+  "resultados": [
+    {
+      "nome": "AlbertBarros/security-auditor-CLAOUDFLARE",
+      "url": "https://github.com/AlbertBarros/security-auditor-CLAOUDFLARE",
+      "data": "2026-10-28T00:10:34.300Z",
+      "commit": "c1c8a8c1471069fb0e188eeaff69b8e8db6564a8",
+      "ferramentas": {
+        "garimbot-scanner": {
+          "ok": true,
+          "arquivos": 22
+        },
+        "gitleaks": {
+          "ok": true
+        },
+        "dependencias": {
+          "ok": true,
+          "metodo": "osv-scanner",
+          "pacotes": 0
+        },
+        "semgrep": {
+          "ok": true
+        },
+        "guarddog": {
+          "ok": true
+        }
+      },
+      "achados": [
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "skills/security-audit/validate-coverage-ledger.test.cjs",
+          "linha": 5,
+          "detalhe": "child_process: de:os\");\nconst path = require(\"node:path\");\nconst { spawnSync } = require(\"node:child_process\");\nconst test = require(\"node:test\");\nconst {\n  LIMITS,\n  canonicalCoverageId,\n  encodeCanonicalRef,\n  isS",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "skills/security-audit/validate-findings.test.cjs",
+          "linha": 5,
+          "detalhe": "child_process: de:os\");\nconst path = require(\"node:path\");\nconst { spawnSync } = require(\"node:child_process\");\nconst test = require(\"node:test\");\nconst schema = require(\"./report-schema.json\");\nconst {\n  LIMITS,\n  ",
+          "ferramenta": "garimbot-scanner"
+        }
+      ],
+      "tamanho_mb": 1,
+      "licenca": {
+        "spdx": "MIT",
+        "atencao": false
+      },
+      "incompletas": [],
+      "bloqueios": 0,
+      "revisar": 2,
+      "script": "PARA_REVISAO",
+      "candidato": {
+        "nome": "AlbertBarros/security-auditor-CLAOUDFLARE",
+        "url": "https://github.com/AlbertBarros/security-auditor-CLAOUDFLARE",
+        "descricao": "Ferramenta de auto tória do cloudflare ",
+        "estrelas": 0,
+        "forks": 0,
+        "issues_abertas": 0,
+        "linguagem": null,
+        "topicos": [],
+        "licenca": "MIT",
+        "arquivado": false,
+        "fork": true,
+        "criado": "2026-10-18T17:23:30Z",
+        "ultimo_push": "2026-09-14T19:29:02Z",
+        "ramo": "main",
+        "tamanho_kb": 143,
+        "dono": {
+          "login": "AlbertBarros",
+          "tipo": "User"
+        }
+      },
+      "cache": null
+    }
+  ],
+  "minutos": 0.1,
+  "nao_auditados": []
+}
