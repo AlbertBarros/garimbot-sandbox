@@ -1,0 +1,38 @@
+{
+  "id": "2026-10-28-analise-albertbarros-claudestory-claude--001404",
+  "tema": null,
+  "titulo": "Análise de AlbertBarros/claudestory_claude-remotion-skill",
+  "termos": [],
+  "data": "2026-10-28T00:14:04.018Z",
+  "modo": "economico",
+  "total": 1,
+  "aprovados": [
+    {
+      "nome": "AlbertBarros/claudestory_claude-remotion-skill",
+      "url": "https://github.com/AlbertBarros/claudestory_claude-remotion-skill",
+      "descricao": "CRIAÇÃO DE VIDEO MOTION - REMOTION",
+      "estrelas": 0,
+      "forks": 0,
+      "issues_abertas": 0,
+      "linguagem": null,
+      "topicos": [],
+      "licenca": "MIT",
+      "arquivado": false,
+      "fork": true,
+      "criado": "2026-10-18T18:52:49Z",
+      "ultimo_push": "2026-08-12T21:05:03Z",
+      "ramo": "main",
+      "tamanho_kb": 14826,
+      "dono": {
+        "login": "AlbertBarros",
+        "tipo": "User"
+      }
+    }
+  ],
+  "descartados": [
+    {
+      "nome": "AlbertBarros/claudestory_claude-remotion-skill",
+      "motivo": "fork"
+    }
+  ]
+}
