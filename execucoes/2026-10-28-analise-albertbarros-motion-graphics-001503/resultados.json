@@ -1,0 +1,98 @@
+{
+  "id": "2026-10-28-analise-albertbarros-motion-graphics-001503",
+  "resultados": [
+    {
+      "nome": "AlbertBarros/motion-graphics",
+      "url": "https://github.com/AlbertBarros/motion-graphics",
+      "data": "2026-10-28T00:15:03.312Z",
+      "commit": "3d83d987d658601d8a1269eb691622bdcd427335",
+      "ferramentas": {
+        "garimbot-scanner": {
+          "ok": true,
+          "arquivos": 160
+        },
+        "gitleaks": {
+          "ok": true
+        },
+        "dependencias": {
+          "ok": true,
+          "metodo": "osv-scanner",
+          "pacotes": 0
+        },
+        "semgrep": {
+          "ok": true
+        },
+        "guarddog": {
+          "ok": true
+        }
+      },
+      "achados": [
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "skills/motion-broll/engine/beats.js",
+          "linha": 2,
+          "detalhe": "child_process: const path=require('path');const os=require('os');const {execFileSync}=require('child_process');const fs=require('fs');\n(async()=>{const [html,out,...ts]=process.argv.slice(2);\n if(!html||!out||!ts.le",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "skills/motion-broll/engine/render.js",
+          "linha": 3,
+          "detalhe": "child_process:  ProRes 4444 .mov\nconst {chromium}=require('playwright');const {spawn}=require('child_process');const path=require('path');\n(async()=>{\n const [html,out,fpsArg]=process.argv.slice(2); const FPS=!fpsAr",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "skills/sound-effects/scripts/sound_pass.py",
+          "linha": 24,
+          "detalhe": "eval: 'error','-show_entries','format=duration','-of','csv=p=0',A.video]).stdout)\nfps=eval(run(['ffprobe','-v','error','-select_streams','v:0','-show_entries','stream=r_frame_rate','-of','csv=p=0',A.video])",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "semgrep:eval-detected",
+          "arquivo": "skills/sound-effects/scripts/sound_pass.py",
+          "linha": 24,
+          "detalhe": "Detected the use of eval(). eval() can be dangerous if used to evaluate dynamic content. If this content can be input from outside the program, this may be a code injection vulnerability. Ensure evalu",
+          "ferramenta": "semgrep"
+        }
+      ],
+      "tamanho_mb": 69,
+      "licenca": {
+        "spdx": null,
+        "atencao": false
+      },
+      "incompletas": [],
+      "bloqueios": 0,
+      "revisar": 4,
+      "script": "PARA_REVISAO",
+      "candidato": {
+        "nome": "AlbertBarros/motion-graphics",
+        "url": "https://github.com/AlbertBarros/motion-graphics",
+        "descricao": "Motion-graphics skills for Claude Code and Codex.",
+        "estrelas": 0,
+        "forks": 0,
+        "issues_abertas": 0,
+        "linguagem": null,
+        "topicos": [],
+        "licenca": null,
+        "arquivado": false,
+        "fork": true,
+        "criado": "2026-10-24T19:26:05Z",
+        "ultimo_push": "2026-10-13T09:42:04Z",
+        "ramo": "main",
+        "tamanho_kb": 41265,
+        "dono": {
+          "login": "AlbertBarros",
+          "tipo": "User"
+        }
+      },
+      "cache": null
+    }
+  ],
+  "minutos": 0.1,
+  "nao_auditados": []
+}

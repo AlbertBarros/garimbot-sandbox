@@ -1,0 +1,38 @@
+{
+  "id": "2026-10-28-analise-albertbarros-motion-graphics-001503",
+  "tema": null,
+  "titulo": "Análise de AlbertBarros/motion-graphics",
+  "termos": [],
+  "data": "2026-10-28T00:15:03.309Z",
+  "modo": "economico",
+  "total": 1,
+  "aprovados": [
+    {
+      "nome": "AlbertBarros/motion-graphics",
+      "url": "https://github.com/AlbertBarros/motion-graphics",
+      "descricao": "Motion-graphics skills for Claude Code and Codex.",
+      "estrelas": 0,
+      "forks": 0,
+      "issues_abertas": 0,
+      "linguagem": null,
+      "topicos": [],
+      "licenca": null,
+      "arquivado": false,
+      "fork": true,
+      "criado": "2026-10-24T19:26:05Z",
+      "ultimo_push": "2026-10-13T09:42:04Z",
+      "ramo": "main",
+      "tamanho_kb": 41265,
+      "dono": {
+        "login": "AlbertBarros",
+        "tipo": "User"
+      }
+    }
+  ],
+  "descartados": [
+    {
+      "nome": "AlbertBarros/motion-graphics",
+      "motivo": "fork"
+    }
+  ]
+}
