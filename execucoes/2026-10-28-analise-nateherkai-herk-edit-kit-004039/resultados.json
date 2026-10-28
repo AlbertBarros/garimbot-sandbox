@@ -1,0 +1,62 @@
+{
+  "id": "2026-10-28-analise-nateherkai-herk-edit-kit-004039",
+  "resultados": [
+    {
+      "nome": "nateherkai/herk-edit-kit",
+      "url": "https://github.com/nateherkai/herk-edit-kit",
+      "data": "2026-10-28T00:40:39.326Z",
+      "commit": null,
+      "ferramentas": {
+        "clone": {
+          "ok": false,
+          "erro": "repositório grande demais para analisar (856 MB, limite 400)"
+        }
+      },
+      "achados": [],
+      "incompletas": [
+        "clone",
+        "garimbot-scanner",
+        "gitleaks",
+        "dependencias",
+        "semgrep",
+        "guarddog"
+      ],
+      "bloqueios": 0,
+      "revisar": 0,
+      "script": "REPROVADO",
+      "candidato": {
+        "nome": "nateherkai/herk-edit-kit",
+        "url": "https://github.com/nateherkai/herk-edit-kit",
+        "descricao": "Herk Edit Kit by Nate Herk: edit videos, reels, and YouTube Shorts with Codex or Claude Code. 15 skills, transcript-driven cuts, storytelling, 406 motion-graphics cards, and HyperFrames templates.",
+        "estrelas": 2274,
+        "forks": 570,
+        "issues_abertas": 11,
+        "linguagem": "HTML",
+        "topicos": [
+          "claude-code",
+          "codex",
+          "herk-edit-kit",
+          "hyperframes",
+          "motion-graphics",
+          "nate-herk",
+          "reels",
+          "video-editing"
+        ],
+        "licenca": null,
+        "arquivado": false,
+        "fork": false,
+        "criado": "2026-04-18T17:30:25Z",
+        "ultimo_push": "2026-10-14T12:51:12Z",
+        "ramo": "main",
+        "tamanho_kb": 460128,
+        "dono": {
+          "login": "nateherkai",
+          "tipo": "User"
+        }
+      },
+      "cache": null
+    }
+  ],
+  "minutos": 0.1,
+  "nao_auditados": []
+}
