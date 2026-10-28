@@ -1,0 +1,38 @@
+{
+  "id": "2026-10-28-analise-albertbarros-video-use-001256",
+  "tema": null,
+  "titulo": "Análise de AlbertBarros/video-use",
+  "termos": [],
+  "data": "2026-10-28T00:12:56.283Z",
+  "modo": "economico",
+  "total": 1,
+  "aprovados": [
+    {
+      "nome": "AlbertBarros/video-use",
+      "url": "https://github.com/AlbertBarros/video-use",
+      "descricao": "SOLTA VIDEO BRUTO E ELE AJUSTA",
+      "estrelas": 0,
+      "forks": 0,
+      "issues_abertas": 0,
+      "linguagem": null,
+      "topicos": [],
+      "licenca": "MIT",
+      "arquivado": false,
+      "fork": true,
+      "criado": "2026-10-24T19:21:32Z",
+      "ultimo_push": "2026-10-08T22:17:01Z",
+      "ramo": "main",
+      "tamanho_kb": 923,
+      "dono": {
+        "login": "AlbertBarros",
+        "tipo": "User"
+      }
+    }
+  ],
+  "descartados": [
+    {
+      "nome": "AlbertBarros/video-use",
+      "motivo": "fork"
+    }
+  ]
+}

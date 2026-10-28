@@ -1,0 +1,104 @@
+{
+  "id": "2026-10-28-analise-albertbarros-video-use-001256",
+  "resultados": [
+    {
+      "nome": "AlbertBarros/video-use",
+      "url": "https://github.com/AlbertBarros/video-use",
+      "data": "2026-10-28T00:12:56.287Z",
+      "commit": "43cfc566833548093455c9d4a46bd69913b7e552",
+      "ferramentas": {
+        "garimbot-scanner": {
+          "ok": true,
+          "arquivos": 36
+        },
+        "gitleaks": {
+          "ok": true
+        },
+        "dependencias": {
+          "ok": true,
+          "metodo": "osv-scanner",
+          "pacotes": 0
+        },
+        "semgrep": {
+          "ok": true
+        },
+        "guarddog": {
+          "ok": true
+        }
+      },
+      "achados": [
+        {
+          "nivel": "revisar",
+          "regra": "guarddog:capability-filesystem-delete",
+          "arquivo": "",
+          "detalhe": "[{\"location\":\"helpers/grade.py:175\",\"code\":\"    finally:\\n        Path(metadata_path).unlink(missing_ok=True)\",\"match\":\".unlink(\",\"message\":\"Detects file/directory deletion capabilities\"}]",
+          "ferramenta": "guarddog",
+          "regra_revisada": "função esperada da ferramenta: o revisor confere se combina com o que ela faz"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "guarddog:capability-network-outbound",
+          "arquivo": "",
+          "detalhe": "[{\"location\":\"helpers/pack_transcripts.py:182\",\"code\":\"    edit_dir = args.edit_dir.resolve()\\n    transcripts_dir = edit_dir / \\\"transcripts\\\"\\n    if not transcripts_dir.is_dir():\",\"match\":\"resolve(",
+          "ferramenta": "guarddog",
+          "regra_revisada": "função esperada da ferramenta: o revisor confere se combina com o que ela faz"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "guarddog:capability-process-spawn",
+          "arquivo": "",
+          "detalhe": "[{\"location\":\"helpers/grade.py:112\",\"code\":\"        ]\\n        subprocess.run(cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)\\n\\n        # Parse signalstats metadata. Signalstat",
+          "ferramenta": "guarddog",
+          "regra_revisada": "função esperada da ferramenta: o revisor confere se combina com o que ela faz"
+        },
+        {
+          "nivel": "bloqueio",
+          "regra": "guarddog:threat-filesystem-read",
+          "arquivo": "",
+          "detalhe": "[{\"location\":\"helpers/transcribe.py:37\",\"code\":\"def load_api_key() -> str:\\n    for candidate in [Path(__file__).resolve().parent.parent / \\\".env\\\", Path(\\\".env\\\")]:\\n        if candidate.exists():\\n ",
+          "ferramenta": "guarddog"
+        },
+        {
+          "nivel": "bloqueio",
+          "regra": "guarddog:threat-process-spawn-silent",
+          "arquivo": "",
+          "detalhe": "[{\"location\":\"helpers/timeline_view.py:60\",\"code\":\"        ]\\n        subprocess.run(cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)\\n        paths.append(out)\\n    return paths",
+          "ferramenta": "guarddog"
+        }
+      ],
+      "tamanho_mb": 2,
+      "licenca": {
+        "spdx": "MIT",
+        "atencao": false
+      },
+      "incompletas": [],
+      "bloqueios": 2,
+      "revisar": 3,
+      "script": "REPROVADO",
+      "candidato": {
+        "nome": "AlbertBarros/video-use",
+        "url": "https://github.com/AlbertBarros/video-use",
+        "descricao": "SOLTA VIDEO BRUTO E ELE AJUSTA",
+        "estrelas": 0,
+        "forks": 0,
+        "issues_abertas": 0,
+        "linguagem": null,
+        "topicos": [],
+        "licenca": "MIT",
+        "arquivado": false,
+        "fork": true,
+        "criado": "2026-10-24T19:21:32Z",
+        "ultimo_push": "2026-10-08T22:17:01Z",
+        "ramo": "main",
+        "tamanho_kb": 923,
+        "dono": {
+          "login": "AlbertBarros",
+          "tipo": "User"
+        }
+      },
+      "cache": null
+    }
+  ],
+  "minutos": 0.2,
+  "nao_auditados": []
+}
