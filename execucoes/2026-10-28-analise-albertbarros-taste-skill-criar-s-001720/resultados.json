@@ -1,0 +1,106 @@
+{
+  "id": "2026-10-28-analise-albertbarros-taste-skill-criar-s-001720",
+  "resultados": [
+    {
+      "nome": "AlbertBarros/taste-skill-CRIAR-SITE-",
+      "url": "https://github.com/AlbertBarros/taste-skill-CRIAR-SITE-",
+      "data": "2026-10-28T00:17:20.322Z",
+      "commit": "12af471f627f866411b4bd785b19646d3672784c",
+      "ferramentas": {
+        "garimbot-scanner": {
+          "ok": true,
+          "arquivos": 72
+        },
+        "gitleaks": {
+          "ok": true
+        },
+        "dependencias": {
+          "ok": true,
+          "metodo": "osv-scanner",
+          "pacotes": 0
+        },
+        "semgrep": {
+          "ok": true
+        },
+        "guarddog": {
+          "ok": true
+        }
+      },
+      "achados": [
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "skills/taste-skill/scripts/inspect.mjs",
+          "linha": 109,
+          "detalhe": "eval: Viewport({ width: cols * cellW, height: rows * cellH, dsf: 1 });\n  await helper.eval((a) => {\n    document.body.style.cssText = `margin:0;background:#888;display:grid;grid-template-columns:repeat(${a.",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "skills/taste-skill/scripts/lib/cdp.mjs",
+          "linha": 204,
+          "detalhe": "eval: alised) or an expression string in the page and returns its JSON value.\n  async eval(fnOrExpr, arg) {\n    const expression = typeof fnOrExpr === 'function'\n      ? `(${fnOrExpr.toString()})(${arg === ",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "skills/taste-skill/scripts/lib/cdp.mjs",
+          "linha": 4,
+          "detalhe": "child_process: t.\n// Requires Node 22+. No npm install.\nimport { spawn, spawnSync } from 'node:child_process';\nimport { existsSync, mkdtempSync, rmSync, writeFileSync, readFileSync, readdirSync } from 'node:fs';\nimp",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "skills/taste-skill/scripts/scenes.mjs",
+          "linha": 55,
+          "detalhe": "eval: t({ width: cols * cellW, height: rows * (cellH + 22), dsf: 1 });\n  await helper.eval((a) => {\n    document.body.style.cssText = `margin:0;background:#777;display:grid;grid-template-columns:repeat(${a.",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "tests/profile-cleanup.mjs",
+          "linha": 5,
+          "detalhe": "child_process: om 'node:os';\nimport { join } from 'node:path';\nimport { spawnSync } from 'node:child_process';\nimport { fileURLToPath } from 'node:url';\nimport { test } from 'node:test';\n\nconst OWNER = 'taste-skill-",
+          "ferramenta": "garimbot-scanner"
+        }
+      ],
+      "tamanho_mb": 15,
+      "licenca": {
+        "spdx": "MIT",
+        "atencao": false
+      },
+      "incompletas": [],
+      "bloqueios": 0,
+      "revisar": 5,
+      "script": "PARA_REVISAO",
+      "candidato": {
+        "nome": "AlbertBarros/taste-skill-CRIAR-SITE-",
+        "url": "https://github.com/AlbertBarros/taste-skill-CRIAR-SITE-",
+        "descricao": "Agent skills that give coding agents taste: art direction, reference images and a browser check instead of generic AI pages",
+        "estrelas": 0,
+        "forks": 0,
+        "issues_abertas": 0,
+        "linguagem": null,
+        "topicos": [],
+        "licenca": "MIT",
+        "arquivado": false,
+        "fork": true,
+        "criado": "2026-10-27T23:43:11Z",
+        "ultimo_push": "2026-10-27T21:39:25Z",
+        "ramo": "main",
+        "tamanho_kb": 49472,
+        "dono": {
+          "login": "AlbertBarros",
+          "tipo": "User"
+        }
+      },
+      "cache": null
+    }
+  ],
+  "minutos": 0.2,
+  "nao_auditados": []
+}

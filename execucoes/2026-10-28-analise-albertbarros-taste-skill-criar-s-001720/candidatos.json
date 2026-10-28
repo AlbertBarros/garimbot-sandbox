@@ -1,0 +1,38 @@
+{
+  "id": "2026-10-28-analise-albertbarros-taste-skill-criar-s-001720",
+  "tema": null,
+  "titulo": "Análise de AlbertBarros/taste-skill-CRIAR-SITE-",
+  "termos": [],
+  "data": "2026-10-28T00:17:20.319Z",
+  "modo": "economico",
+  "total": 1,
+  "aprovados": [
+    {
+      "nome": "AlbertBarros/taste-skill-CRIAR-SITE-",
+      "url": "https://github.com/AlbertBarros/taste-skill-CRIAR-SITE-",
+      "descricao": "Agent skills that give coding agents taste: art direction, reference images and a browser check instead of generic AI pages",
+      "estrelas": 0,
+      "forks": 0,
+      "issues_abertas": 0,
+      "linguagem": null,
+      "topicos": [],
+      "licenca": "MIT",
+      "arquivado": false,
+      "fork": true,
+      "criado": "2026-10-27T23:43:11Z",
+      "ultimo_push": "2026-10-27T21:39:25Z",
+      "ramo": "main",
+      "tamanho_kb": 49472,
+      "dono": {
+        "login": "AlbertBarros",
+        "tipo": "User"
+      }
+    }
+  ],
+  "descartados": [
+    {
+      "nome": "AlbertBarros/taste-skill-CRIAR-SITE-",
+      "motivo": "fork"
+    }
+  ]
+}
