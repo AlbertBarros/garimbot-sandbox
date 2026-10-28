@@ -1,0 +1,33 @@
+{
+  "id": "2026-10-28-analise-cloudflare-security-audit-skill-002219",
+  "tema": null,
+  "titulo": "Análise de cloudflare/security-audit-skill",
+  "termos": [],
+  "data": "2026-10-28T00:22:19.548Z",
+  "modo": "economico",
+  "total": 1,
+  "aprovados": [
+    {
+      "nome": "cloudflare/security-audit-skill",
+      "url": "https://github.com/cloudflare/security-audit-skill",
+      "descricao": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+      "estrelas": 50164,
+      "forks": 3150,
+      "issues_abertas": 99,
+      "linguagem": "JavaScript",
+      "topicos": [],
+      "licenca": "MIT",
+      "arquivado": false,
+      "fork": false,
+      "criado": "2026-06-18T14:08:44Z",
+      "ultimo_push": "2026-09-14T19:29:02Z",
+      "ramo": "main",
+      "tamanho_kb": 143,
+      "dono": {
+        "login": "cloudflare",
+        "tipo": "Organization"
+      }
+    }
+  ],
+  "descartados": []
+}
