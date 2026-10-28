@@ -1,0 +1,38 @@
+{
+  "id": "2026-10-28-analise-barty-bart-motion-graphics-003719",
+  "tema": null,
+  "titulo": "Análise de Barty-Bart/motion-graphics",
+  "termos": [],
+  "data": "2026-10-28T00:37:19.782Z",
+  "modo": "economico",
+  "total": 1,
+  "aprovados": [
+    {
+      "nome": "Barty-Bart/motion-graphics",
+      "url": "https://github.com/Barty-Bart/motion-graphics",
+      "descricao": "Motion-graphics skills for Claude Code and Codex.",
+      "estrelas": 891,
+      "forks": 135,
+      "issues_abertas": 1,
+      "linguagem": "HTML",
+      "topicos": [],
+      "licenca": null,
+      "arquivado": false,
+      "fork": false,
+      "criado": "2026-09-25T12:07:01Z",
+      "ultimo_push": "2026-10-13T09:42:04Z",
+      "ramo": "main",
+      "tamanho_kb": 41265,
+      "dono": {
+        "login": "Barty-Bart",
+        "tipo": "User"
+      }
+    }
+  ],
+  "descartados": [
+    {
+      "nome": "Barty-Bart/motion-graphics",
+      "motivo": "sem licença"
+    }
+  ]
+}
