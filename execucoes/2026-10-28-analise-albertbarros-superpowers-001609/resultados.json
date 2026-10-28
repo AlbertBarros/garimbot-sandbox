@@ -1,0 +1,272 @@
+{
+  "id": "2026-10-28-analise-albertbarros-superpowers-001609",
+  "resultados": [
+    {
+      "nome": "AlbertBarros/superpowers",
+      "url": "https://github.com/AlbertBarros/superpowers",
+      "data": "2026-10-28T00:16:09.464Z",
+      "commit": "bb92a77741419a4ab5f06e711a283343f1ada0c3",
+      "ferramentas": {
+        "garimbot-scanner": {
+          "ok": true,
+          "arquivos": 238
+        },
+        "gitleaks": {
+          "ok": true
+        },
+        "dependencias": {
+          "ok": true,
+          "metodo": "osv-scanner",
+          "pacotes": 0
+        },
+        "semgrep": {
+          "ok": true
+        },
+        "guarddog": {
+          "ok": true
+        }
+      },
+      "achados": [
+        {
+          "nivel": "revisar",
+          "regra": "comentario-escondido",
+          "arquivo": ".github/ISSUE_TEMPLATE/bug_report.md",
+          "linha": 16,
+          "detalhe": "comentário HTML com ordens:  Required. We assume an agent filed this report — tell us which one and\n     where it ran. We weigh reports by what produced them. ",
+          "ferramenta": "garimbot-scanner",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "comentario-escondido",
+          "arquivo": ".github/ISSUE_TEMPLATE/feature_request.md",
+          "linha": 34,
+          "detalhe": "comentário HTML com ordens:  Required. We assume an agent wrote this request — tell us which one and\n     where it ran. We weigh proposals reasoned from documentation differently\n     than ones grounded in a real session where the problem actually came up. ",
+          "ferramenta": "garimbot-scanner",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "comentario-escondido",
+          "arquivo": ".github/ISSUE_TEMPLATE/platform_support.md",
+          "linha": 26,
+          "detalhe": "comentário HTML com ordens:  Required. We assume an agent wrote this request — tell us which one and\n     where it ran. ",
+          "ferramenta": "garimbot-scanner",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "comentario-escondido",
+          "arquivo": ".github/PULL_REQUEST_TEMPLATE.md",
+          "linha": 12,
+          "detalhe": "comentário HTML com ordens:  Required. PRs that omit this will be closed. We assume an agent wrote\n     this PR — tell us which one and where it ran. We weigh contributions by\n     what produced them: content reasoned from documentation is held to a\n     different bar than work grounded in a real session. ",
+          "ferramenta": "garimbot-scanner",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "comentario-escondido",
+          "arquivo": ".github/PULL_REQUEST_TEMPLATE.md",
+          "linha": 72,
+          "detalhe": "comentário HTML com ordens:  If this PR adds support for a new harness (IDE, CLI tool, agent\n     runner), you MUST include a session transcript proving the\n     integration actually works.\n\n     A real integration loads the `using-superpowers` bootstrap at session\n     start. The bootstrap is what causes skills to auto-trigger. Without\n     it, the skills are dead weight — present on disk but nev",
+          "ferramenta": "garimbot-scanner",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "comentario-escondido",
+          "arquivo": ".github/PULL_REQUEST_TEMPLATE.md",
+          "linha": 127,
+          "detalhe": "comentário HTML com ordens:  If you changed wording in skills that shape agent behavior, show your\n     eval methodology and results. These are not prose — they are code. ",
+          "ferramenta": "garimbot-scanner",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "skills/brainstorming/scripts/server.cjs",
+          "linha": 537,
+          "detalhe": "child_process: companionUrl(); // must carry the key or the gate 403s it\n  const cp = require('child_process');\n  // Operator-provided launcher: run as given (this env var is trusted operator input).\n  if (process.e",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "skills/writing-skills/render-graphs.js",
+          "linha": 18,
+          "detalhe": "child_process:  * as fs from 'fs';\nimport * as path from 'path';\nimport { execFileSync } from 'child_process';\n\nfunction extractDotBlocks(markdown) {\n  const blocks = [];\n  const regex = /```dot\\n([\\s\\S]*?)```/g;\n  ",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "tests/brainstorm-server/auth.test.js",
+          "linha": 93,
+          "detalhe": "new Function: ements = [];\n  const location = { replace(url) { replacements.push(url); } };\n  new Function('sessionStorage', 'location', match[1])(sessionStorage, location);\n  return replacements;\n}\n\nasync function",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "tests/brainstorm-server/auth.test.js",
+          "linha": 15,
+          "detalhe": "child_process: ackage as a test client (test-only dependency).\n */\n\nconst { spawn } = require('child_process');\nconst http = require('http');\nconst WebSocket = require('ws');\nconst fs = require('fs');\nconst path = r",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "tests/brainstorm-server/branding.test.js",
+          "linha": 5,
+          "detalhe": "child_process: companion's Superpowers/Prime Radiant branding.\n */\n\nconst { spawn } = require('child_process');\nconst http = require('http');\nconst fs = require('fs');\nconst path = require('path');\nconst assert = re",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "tests/brainstorm-server/branding.test.js",
+          "linha": 160,
+          "detalhe": "telemetria: sert(\n    html.includes(`Prime Radiant Superpowers v${version}`),\n    'disabled telemetry should keep plain text Prime Radiant/Superpowers branding'\n  );\n}\n\nfunction assertTelemetryImage(html, version",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "tests/brainstorm-server/helper.test.js",
+          "linha": 21,
+          "detalhe": "new Function: ed pure helpers run (not the browser code).\nconst moduleShim = { exports: {} };\nnew Function('module', src)(moduleShim);\nconst { nextReconnectDelay, MIN_RECONNECT_MS, MAX_RECONNECT_MS, TOMBSTONE_AFTER",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "tests/brainstorm-server/lifecycle.test.js",
+          "linha": 12,
+          "detalhe": "child_process: st client (test-only dependency).\n */\n\nconst { spawn, execFileSync } = require('child_process');\nconst WebSocket = require('ws');\nconst fs = require('fs');\nconst path = require('path');\nconst assert =",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "tests/brainstorm-server/server.test.js",
+          "linha": 11,
+          "detalhe": "child_process: -only dependency,\n * not shipped to end users).\n */\n\nconst { spawn } = require('child_process');\nconst http = require('http');\nconst WebSocket = require('ws');\nconst fs = require('fs');\nconst path = r",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "tests/claude-code/test-subagent-driven-development-integration.sh",
+          "linha": 13,
+          "detalhe": "telemetria: rill relies on `npm test` succeeding)\n#   - analyze-token-usage.py token-budget telemetry\n# Kept until those assertions are added to drill or explicitly retired.\nset -euo pipefail\n\nSCRIPT_DIR=\"$(cd \"$",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "tests/brainstorm-server/ws-protocol.test.js",
+          "linha": 53,
+          "detalhe": "generic-api-key no commit 9c98e01873 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "guarddog:capability-filesystem-delete",
+          "arquivo": "",
+          "detalhe": "[{\"location\":\"skills/brainstorming/scripts/server.cjs:604\",\"code\":\"        const eventsFile = path.join(STATE_DIR, 'events');\\n        if (fs.existsSync(eventsFile)) fs.unlinkSync(eventsFile);\\n      ",
+          "ferramenta": "guarddog",
+          "regra_revisada": "função esperada da ferramenta: o revisor confere se combina com o que ela faz"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "guarddog:capability-filesystem-read",
+          "arquivo": "",
+          "detalhe": "[{\"location\":\".hermes-plugin/__init__.py:64\",\"code\":\"    ) as f:\\n        body = _strip_frontmatter(f.read())\\n\\n    tools_path = os.path.join(\",\"match\":\".read(\",\"message\":\"Detects filesystem read cap",
+          "ferramenta": "guarddog",
+          "regra_revisada": "função esperada da ferramenta: o revisor confere se combina com o que ela faz"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "guarddog:capability-filesystem-write-executable",
+          "arquivo": "",
+          "detalhe": "[{\"location\":\"skills/brainstorming/scripts/server.cjs:129\",\"code\":\"function chmodOwnerOnly(file) {\\n  try { fs.chmodSync(file, 0o600); } catch (e) { /* best effort */ }\\n}\",\"match\":\"fs.chmodSync(\",\"me",
+          "ferramenta": "guarddog",
+          "regra_revisada": "função esperada da ferramenta: o revisor confere se combina com o que ela faz"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "guarddog:capability-network-download",
+          "arquivo": "",
+          "detalhe": "[{\"location\":\"tests/brainstorm-server/auth.test.js:50\",\"code\":\"  return new Promise((resolve, reject) => {\\n    http.get(url, { headers }, (res) => {\\n      let data = '';\\n      res.on('data', chunk ",
+          "ferramenta": "guarddog",
+          "regra_revisada": "função esperada da ferramenta: o revisor confere se combina com o que ela faz"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "guarddog:capability-network-outbound",
+          "arquivo": "",
+          "detalhe": "[{\"location\":\".opencode/plugins/superpowers.js:25\",\"code\":\"// Skills directory shared by V1 (config hook) and V2 (setup/ctx.skill.transform)\\nconst superpowersSkillsDir = path.resolve(__dirname, '../.",
+          "ferramenta": "guarddog",
+          "regra_revisada": "função esperada da ferramenta: o revisor confere se combina com o que ela faz"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "guarddog:capability-process-schedule",
+          "arquivo": "",
+          "detalhe": "[{\"location\":\"tests/brainstorm-server/helper.test.js:116\",\"code\":\"    WebSocket: FakeWS,\\n    setTimeout: (fn, ms) => { state.timers.push({ fn, ms, fired: false, cleared: false }); return state.timers",
+          "ferramenta": "guarddog",
+          "regra_revisada": "função esperada da ferramenta: o revisor confere se combina com o que ela faz"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "guarddog:capability-process-spawn",
+          "arquivo": "",
+          "detalhe": "[{\"location\":\"skills/brainstorming/scripts/server.cjs:540\",\"code\":\"  if (process.env.BRAINSTORM_OPEN_CMD) {\\n    try { cp.exec(process.env.BRAINSTORM_OPEN_CMD + ' ' + JSON.stringify(url), () => {}); }",
+          "ferramenta": "guarddog",
+          "regra_revisada": "função esperada da ferramenta: o revisor confere se combina com o que ela faz"
+        },
+        {
+          "nivel": "bloqueio",
+          "regra": "guarddog:threat-runtime-environment-read",
+          "arquivo": "",
+          "detalhe": "[{\"location\":\"skills/brainstorming/scripts/server.cjs:123\",\"code\":\"// same key and an already-open tab's cookie still validates.\\nconst TOKEN_FILE = process.env.BRAINSTORM_TOKEN_FILE || null;\\nfunctio",
+          "ferramenta": "guarddog"
+        }
+      ],
+      "tamanho_mb": 8,
+      "licenca": {
+        "spdx": "MIT",
+        "atencao": false
+      },
+      "incompletas": [],
+      "bloqueios": 1,
+      "revisar": 24,
+      "script": "REPROVADO",
+      "candidato": {
+        "nome": "AlbertBarros/superpowers",
+        "url": "https://github.com/AlbertBarros/superpowers",
+        "descricao": "Ajuda o Claude Code a planejar, dividir tarefas, desenvolver orientado a testes e revisar mudanças.",
+        "estrelas": 0,
+        "forks": 0,
+        "issues_abertas": 0,
+        "linguagem": null,
+        "topicos": [],
+        "licenca": "MIT",
+        "arquivado": false,
+        "fork": true,
+        "criado": "2026-10-18T15:20:22Z",
+        "ultimo_push": "2026-10-10T03:03:30Z",
+        "ramo": "main",
+        "tamanho_kb": 7658,
+        "dono": {
+          "login": "AlbertBarros",
+          "tipo": "User"
+        }
+      },
+      "cache": null
+    }
+  ],
+  "minutos": 0.2,
+  "nao_auditados": []
+}

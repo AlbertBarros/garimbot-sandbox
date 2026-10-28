@@ -1,0 +1,38 @@
+{
+  "id": "2026-10-28-analise-albertbarros-superpowers-001609",
+  "tema": null,
+  "titulo": "Análise de AlbertBarros/superpowers",
+  "termos": [],
+  "data": "2026-10-28T00:16:09.462Z",
+  "modo": "economico",
+  "total": 1,
+  "aprovados": [
+    {
+      "nome": "AlbertBarros/superpowers",
+      "url": "https://github.com/AlbertBarros/superpowers",
+      "descricao": "Ajuda o Claude Code a planejar, dividir tarefas, desenvolver orientado a testes e revisar mudanças.",
+      "estrelas": 0,
+      "forks": 0,
+      "issues_abertas": 0,
+      "linguagem": null,
+      "topicos": [],
+      "licenca": "MIT",
+      "arquivado": false,
+      "fork": true,
+      "criado": "2026-10-18T15:20:22Z",
+      "ultimo_push": "2026-10-10T03:03:30Z",
+      "ramo": "main",
+      "tamanho_kb": 7658,
+      "dono": {
+        "login": "AlbertBarros",
+        "tipo": "User"
+      }
+    }
+  ],
+  "descartados": [
+    {
+      "nome": "AlbertBarros/superpowers",
+      "motivo": "fork"
+    }
+  ]
+}
