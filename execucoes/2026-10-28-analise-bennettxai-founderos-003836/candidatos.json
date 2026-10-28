@@ -1,0 +1,44 @@
+{
+  "id": "2026-10-28-analise-bennettxai-founderos-003836",
+  "tema": null,
+  "titulo": "Análise de Bennettxai/FounderOS",
+  "termos": [],
+  "data": "2026-10-28T00:38:36.158Z",
+  "modo": "economico",
+  "total": 1,
+  "aprovados": [
+    {
+      "nome": "Bennettxai/FounderOS",
+      "url": "https://github.com/Bennettxai/FounderOS",
+      "descricao": "An open-source, single-operator business command center: run a one-person operated company as AI-assisted departments (comms, funnel, social, finances, agents, and a knowledge graph) from one live dashboard.",
+      "estrelas": 1257,
+      "forks": 353,
+      "issues_abertas": 6,
+      "linguagem": "TypeScript",
+      "topicos": [
+        "ai-agents",
+        "dashboard",
+        "founder-os",
+        "nextjs",
+        "open-source",
+        "operator-os",
+        "personal-productivity",
+        "sqlite",
+        "tailwindcss",
+        "typescript"
+      ],
+      "licenca": "MIT",
+      "arquivado": false,
+      "fork": false,
+      "criado": "2026-07-07T11:58:37Z",
+      "ultimo_push": "2026-10-23T20:46:39Z",
+      "ramo": "main",
+      "tamanho_kb": 39892,
+      "dono": {
+        "login": "Bennettxai",
+        "tipo": "User"
+      }
+    }
+  ],
+  "descartados": []
+}

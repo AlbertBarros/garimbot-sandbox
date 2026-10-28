@@ -1,0 +1,1446 @@
+{
+  "id": "2026-10-28-analise-bennettxai-founderos-003836",
+  "resultados": [
+    {
+      "nome": "Bennettxai/FounderOS",
+      "url": "https://github.com/Bennettxai/FounderOS",
+      "data": "2026-10-28T00:38:36.163Z",
+      "commit": "fb974bfcdf529cb6c8faeb1473d561d26e3d103a",
+      "ferramentas": {
+        "garimbot-scanner": {
+          "ok": true,
+          "arquivos": 1687
+        },
+        "gitleaks": {
+          "ok": true
+        },
+        "dependencias": {
+          "ok": true,
+          "metodo": "osv-scanner",
+          "pacotes": 28
+        },
+        "semgrep": {
+          "ok": true
+        },
+        "guarddog": {
+          "ok": true
+        }
+      },
+      "achados": [
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "app/api/brand-deals/draft/route.ts",
+          "linha": 21,
+          "detalhe": "child_process: or: 'bad id' }, { status: 400 });\n  }\n  const { execFile } = await import('node:child_process');\n  const bin = await gsendBin();\n  const result = await new Promise<{ ok: boolean; out: string }>((resol",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "app/api/brand-deals/send/route.ts",
+          "linha": 18,
+          "detalhe": "child_process: r: String(e) }, { status: 400 });\n  }\n  const { execFile } = await import('node:child_process');\n  const os = await import('node:os');\n  const gsend = process.env.GSEND_BIN ?? `${os.homedir()}/bin/gse",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "app/api/finances/bank-statement/route.ts",
+          "linha": 2,
+          "detalhe": "child_process: import { NextResponse } from 'next/server';\nimport { execFile } from 'node:child_process';\nimport { parseBankStatementSummary } from '@/lib/bank-statements';\nimport { openBankStore } from '@/lib/",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "app/api/workflows/draft/logic.ts",
+          "linha": 86,
+          "detalhe": "child_process: prompt: string): Promise<CliResult> {\n  const { execFile } = await import('node:child_process');\n  return new Promise((resolve) => {\n    const child = execFile(\n      'claude',\n      ['-p', prompt, '-",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "components/KnowledgeGraph.tsx",
+          "linha": 2207,
+          "detalhe": "telemetria:  linear infinite; }\n/* memory notes wander slowly amongst each other (per-layer amplitude/phase) */\n@keyframes kg-note-drift { from { transform: translate(0, 0); } to { transform: translate(var(--kg-d",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "lib/brand-deals.ts",
+          "linha": 334,
+          "detalhe": "child_process: ExecFn = async (bin, args, opts) => {\n  const { execFile } = await import('node:child_process');\n  return new Promise((resolve) => {\n    execFile(bin, args, { timeout: opts.timeout, maxBuffer: 4 * 102",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "lib/connectors/email.ts",
+          "linha": 61,
+          "detalhe": "child_process: : 'no recipient address' };\n  try {\n    const { execFile } = await import('node:child_process');\n    const os = await import('node:os');\n    const gsend = env.GSEND_BIN ?? `${os.homedir()}/bin/gsend`;",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "lib/connectors/gbrain.ts",
+          "linha": 1,
+          "detalhe": "child_process: import { execFile } from 'node:child_process';\nimport fs from 'node:fs';\nimport path from 'node:path';\nimport os from 'node:os';\nimport { brainStoreDir",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "lib/connectors/local-stack.ts",
+          "linha": 4,
+          "detalhe": "child_process: os from 'node:os';\nimport path from 'node:path';\nimport { execFile } from 'node:child_process';\nimport type { ConnectorStatus } from '@/lib/connectors/types';\n\n/**\n * One connector for the local machi",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "lib/connectors/superset.ts",
+          "linha": 17,
+          "detalhe": "child_process:  the CLI's own stderr, never a fake success.\n */\nimport { execFile } from 'node:child_process';\nimport fs from 'node:fs';\nimport path from 'node:path';\nimport { resolveCred } from '@/lib/creds';\nimpor",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "lib/connectors/whatsapp.ts",
+          "linha": 5,
+          "detalhe": "child_process: os from 'node:os';\nimport path from 'node:path';\nimport { execFile } from 'node:child_process';\nimport type { ConnectorStatus } from '@/lib/connectors/types';\nimport type { CommsItem } from '@/lib/com",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "lib/creative-engine/assets.ts",
+          "linha": 36,
+          "detalhe": "child_process: bs: string): Promise<string | null> {\n  const { execFile } = await import('node:child_process');\n  const { abs, publicPath } = assetPathFor(campaignId, `${assetId}-thumb`, '.jpg');\n  return new Promis",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "lib/creative-engine/claude.ts",
+          "linha": 15,
+          "detalhe": "child_process: vailable: boolean; error: string }> {\n  const { execFile } = await import('node:child_process');\n  return new Promise((resolve) => {\n    const child = execFile(\n      'claude',\n      ['-p', prompt, '-",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "lib/lab/gen/claude-image.ts",
+          "linha": 16,
+          "detalhe": "child_process: async (cmd, args, stdin, timeoutMs) => {\n  const { spawn } = await import('node:child_process');\n  return new Promise((resolve) => {\n    let stdout = '';\n    let stderr = '';\n    let settled = false;\n",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "lib/lab/gen/frames.ts",
+          "linha": 88,
+          "detalhe": "child_process: cLike = async (file, args, opts) => {\n  const { execFile } = await import('node:child_process');\n  return new Promise((resolve, reject) => {\n    execFile(file, args, { timeout: opts.timeout, maxBuffer",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "unicode-escondido",
+          "arquivo": "lib/lab/gen/lexicon.ts",
+          "linha": 61,
+          "detalhe": "caracteres invisíveis: con(text: string): Lexicon {\n  const lines = text.replace(/^\\u{feff}/, '').split(/\\r?\\n/).filter((l) => l.trim());\n  const head",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "lib/lab/setup/health.ts",
+          "linha": 11,
+          "detalhe": "child_process: s from 'node:fs';\nimport path from 'node:path';\nimport { spawnSync } from 'node:child_process';\nimport { LAB_RADAR_SOURCES, type LabRadarSource } from '@/lib/schemas';\nimport type { LabStore } from '@",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "lib/lab/setup/run-now.ts",
+          "linha": 6,
+          "detalhe": "child_process:  returns at once.\n * Tests replace the spawner.\n */\nimport { spawn } from 'node:child_process';\nimport path from 'node:path';\nimport type { LabJobId } from '@/lib/schemas';\n\nexport type TickSpawn = (a",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "lib/wizard/claude.ts",
+          "linha": 37,
+          "detalhe": "child_process: 120_000,\n): Promise<WizardExchange> {\n  const { execFile } = await import('node:child_process');\n  const args = ['-p', prompt, '--output-format', 'json', '--append-system-prompt', systemAppend];\n  if ",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "scripts/creative-engine-audit/click-audit.mjs",
+          "linha": 190,
+          "detalhe": "eval: sewhere and blame whatever is on top there.\n            const hit = await page.$eval(`[data-audit=\"${el.id}\"]`, (e) => {\n              e.scrollIntoView({ block: 'center' });\n              const r = e.",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "scripts/g-audit.mjs",
+          "linha": 77,
+          "detalhe": "child_process: de:os';\nimport path from 'node:path';\nimport { execFileSync, spawn } from 'node:child_process';\nimport { pathToFileURL } from 'node:url';\nimport { AUDIT_ROUTES, THEME_IDS, cdp } from './audit-routes.m",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "scripts/l-audit.mjs",
+          "linha": 36,
+          "detalhe": "child_process: rt os from 'node:os';\nimport path from 'node:path';\nimport { spawn } from 'node:child_process';\nimport { cdp } from './audit-routes.mjs';\nimport { composite, contrastRatio, parseColor, routeSlug } fro",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "scripts/lab-agent.ts",
+          "linha": 3,
+          "detalhe": "child_process: s from 'node:fs';\nimport path from 'node:path';\nimport { spawnSync } from 'node:child_process';\nimport { parseEnvFile } from '../lib/creds';\nimport { resolveLab } from '../lib/lab/context';\nimport { m",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "scripts/lab-frames.mjs",
+          "linha": 26,
+          "detalhe": "child_process: rt os from 'node:os';\nimport path from 'node:path';\nimport { spawn } from 'node:child_process';\nimport { pathToFileURL } from 'node:url';\nimport { cdp } from './audit-routes.mjs';\nimport { ROOT, compo",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "scripts/lab-motion-audit.mjs",
+          "linha": 25,
+          "detalhe": "child_process: rt os from 'node:os';\nimport path from 'node:path';\nimport { spawn } from 'node:child_process';\nimport { cdp } from './audit-routes.mjs';\n\nconst BASE = (process.env.GLADOS_URL ?? '').replace(/\\/$/, ''",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "scripts/motion-console-audit.mjs",
+          "linha": 28,
+          "detalhe": "child_process:  path from 'node:path';\nimport net from 'node:net';\nimport { spawn } from 'node:child_process';\n\nconst BASE = (process.env.GLADOS_URL ?? '').replace(/\\/$/, '');\nif (!BASE) { console.error('Set GLADOS_",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "scripts/nav-timing.mjs",
+          "linha": 10,
+          "detalhe": "child_process: 127.0.0.1:4100 [--ui classic] [--json out.json]\n */\nimport { spawn } from 'node:child_process';\nimport path from 'node:path';\nimport { fileURLToPath } from 'node:url';\n\nconst here = path.dirname(fileU",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "scripts/perf-nav.mjs",
+          "linha": 40,
+          "detalhe": "child_process: riteFileSync, mkdtempSync, rmSync } from 'node:fs';\nimport { spawn } from 'node:child_process';\nimport os from 'node:os';\nimport path from 'node:path';\n\nconst args = process.argv.slice(2);\nconst opt =",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "scripts/screenshot-matrix.mjs",
+          "linha": 24,
+          "detalhe": "child_process:  path from 'node:path';\nimport net from 'node:net';\nimport { spawn } from 'node:child_process';\nimport { THEME_IDS, routesFromEnv } from './audit-routes.mjs';\n\nconst BASE = (process.env.GLADOS_URL ?? ",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "scripts/serve.mjs",
+          "linha": 27,
+          "detalhe": "child_process: stsSync, readFileSync, renameSync } from 'node:fs';\nimport { spawn } from 'node:child_process';\nimport { createRequire } from 'node:module';\nimport path from 'node:path';\n\nconst MODES = ['dev', 'start",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "tests/appearance.test.ts",
+          "linha": 201,
+          "detalhe": "new Function: ) => void) => (listener = l),\n  };\n  const window = { matchMedia: () => mq };\n  new Function('localStorage', 'document', 'window', 'location', APPEARANCE_INIT_SCRIPT)(localStorage, document, window, {",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "tests/content-refine-prompt.test.ts",
+          "linha": 56,
+          "detalhe": "child_process: e, CLI mocked — same approach as tests/workflows-draft.test.ts ──\nvi.mock('node:child_process', () => ({\n  execFile: vi.fn(),\n}));\n\ndescribe('POST /api/content/refine-prompt (CLI mocked)', () => {\n  t",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "tests/fo-fixups.test.ts",
+          "linha": 282,
+          "detalhe": "new Function:  (k === SIDEBAR_STORAGE_KEY ? JSON.stringify({ v: 2, w: 232 }) : null) };\n      new Function('document', 'localStorage', 'location', 'innerWidth', SIDEBAR_INIT_SCRIPT)({ documentElement: root }, stora",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "tests/g-audit-lib.test.ts",
+          "linha": 30,
+          "detalhe": "new Function: aveLength(1);\n    for (const expr of Object.values(CLASSIC_MASKS)) expect(() => new Function(`return ${expr}`)).not.toThrow();\n    const m = parseMasks(['--classic-baseline', '--mask', '/setup=.live-p",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "tests/home-system.test.ts",
+          "linha": 17,
+          "detalhe": "child_process: der can prove it starts none (H-2).\nconst spawned: string[] = [];\nvi.mock('node:child_process', async (importOriginal) => {\n  const real = await importOriginal<typeof import('node:child_process')>();\n",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo",
+          "arquivo": "tests/keys.test.ts",
+          "linha": 30,
+          "detalhe": "token do Slack no arquivo (valor oculto)",
+          "ferramenta": "garimbot-scanner",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "tests/lab-estimate-pure.test.ts",
+          "linha": 11,
+          "detalhe": "child_process: /\nconst ROOT = process.cwd();\nconst FORBIDDEN = [/^node:/, /^(fs|path|os|crypto|child_process)$/, /^@\\/lib\\/db$/, /^@\\/lib\\/lab\\/store$/, /^@\\/lib\\/lab\\/net$/, /^@\\/lib\\/creds$/, /^better-sqlite3$/];\n",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "tests/lab-founderos.test.ts",
+          "linha": 5,
+          "detalhe": "child_process: rom 'node:os';\nimport path from 'node:path';\nimport { execFileSync } from 'node:child_process';\nimport Database from 'better-sqlite3';\nimport { LAB_DDL } from '@/lib/db';\nimport { labStore } from '@/l",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "tests/lab-gen-diversity.test.ts",
+          "linha": 11,
+          "detalhe": "child_process: /ideas';\nimport { eventAngleStats } from '@/lib/lab/gen/events';\n\nvi.mock('node:child_process', async (importOriginal) => {\n  const real = await importOriginal<typeof import('node:child_process')>();\n",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "tests/lab-gen-editor.test.ts",
+          "linha": 10,
+          "detalhe": "child_process: ger';\nimport { T, addPost, baseWorld } from './lab-gen-helpers';\n\nvi.mock('node:child_process', async (importOriginal) => {\n  const real = await importOriginal<typeof import('node:child_process')>();\n",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "tests/lab-gen-frames.test.ts",
+          "linha": 5,
+          "detalhe": "child_process: rom 'node:os';\nimport path from 'node:path';\nimport { execFileSync } from 'node:child_process';\nimport { DissectReplySchema, dissectCycle, DISSECT_FRAMES_PROMPT_VERSION, FRAMES_PROMPT_ADDITION, type D",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "tests/lab-gen-ideas.test.ts",
+          "linha": 9,
+          "detalhe": "child_process:  addEvent, addPost, baseWorld, cover } from './lab-gen-helpers';\n\nvi.mock('node:child_process', async (importOriginal) => {\n  const real = await importOriginal<typeof import('node:child_process')>();\n",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "tests/lab-gen-judge.test.ts",
+          "linha": 11,
+          "detalhe": "child_process: al, recordJudgeVerdict: vi.fn(() => ({}) as LabPrediction) };\n});\nvi.mock('node:child_process', async (importOriginal) => {\n  const real = await importOriginal<typeof import('node:child_process')>();\n",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "unicode-escondido",
+          "arquivo": "tests/lab-gen-rules.test.ts",
+          "linha": 30,
+          "detalhe": "caracteres invisíveis:  15 }, (_, i) => [`filler${i}`, 2 + i / 10]);\nconst CSV = ['\\u{feff}Word,Bigram,Conc.M,Conc.SD,Unknown,Total,Percent_known,SUBT",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "tests/lab-ledger-hide.test.ts",
+          "linha": 7,
+          "detalhe": "eval: lpers/lab-ledger-world';\n\n/** 06 8.2 verdict table, each row with a constructed eval (AC-06-25). */\nconst ev = (o: Partial<LabEval> = {}): LabEval => ({\n  predictor: 'sh_24h', predictorVersion: 'sh-1'",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "tests/lab-schedule.test.ts",
+          "linha": 5,
+          "detalhe": "child_process: os from 'node:os';\nimport path from 'node:path';\nimport childProcess from 'node:child_process';\nimport Database from 'better-sqlite3';\nimport { LAB_DDL } from '@/lib/db';\nimport { labStore, type LabSt",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "tests/lab-v2-trajectory.test.ts",
+          "linha": 2,
+          "detalhe": "child_process: rt { describe, expect, test } from 'vitest';\nimport { execFileSync } from 'node:child_process';\nimport { dailyCumulative, peakDayShare, trajectoryClass } from '@/lib/lab/measure/trajectory';\nimport { ",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "tests/legacy-style.test.ts",
+          "linha": 132,
+          "detalhe": "new Function: s: false, addEventListener: (_: string, l: () => void) => (listener = l) };\n    new Function('localStorage', 'document', 'window', 'location', APPEARANCE_INIT_SCRIPT)(localStorage, document, { matchMe",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "tests/no-personal-data.test.ts",
+          "linha": 3,
+          "detalhe": "child_process: rom 'node:fs';\nimport path from 'node:path';\nimport { execFileSync } from 'node:child_process';\nimport { describe, expect, it } from 'vitest';\nimport { EXCLUDE_PREFIX, NEVER_PUBLISH_DIRS, assertPublis",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "tests/sidebar-respect.test.ts",
+          "linha": 36,
+          "detalhe": "new Function: attrs[k] = v),\n    removeAttribute: (k: string) => void delete attrs[k],\n  };\n  new Function('document', 'localStorage', 'location', 'innerWidth', SIDEBAR_INIT_SCRIPT)(\n    { documentElement: root },\n",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "tests/sidebar.test.ts",
+          "linha": 48,
+          "detalhe": "new Function: stored();\n      return k === SIDEBAR_STORAGE_KEY ? stored : null;\n    },\n  };\n  new Function('document', 'localStorage', 'location', 'innerWidth', SIDEBAR_INIT_SCRIPT)(\n    { documentElement: root },\n",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "tests/theme-registry-sync.test.ts",
+          "linha": 113,
+          "detalhe": "new Function: ?? null } };\n    const window = { matchMedia: () => ({ matches: false }) };\n    new Function('localStorage', 'document', 'window', 'location', APPEARANCE_INIT_SCRIPT)(localStorage, document, window, {",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "execucao-dinamica",
+          "arquivo": "tests/workflows-draft.test.ts",
+          "linha": 76,
+          "detalhe": "child_process:  The route must never invoke the real `claude` binary in tests. We mock\n// node:child_process.execFile so the POST handler is exercised end to end\n// (including the retry-once-on-invalid-JSON path and",
+          "ferramenta": "garimbot-scanner"
+        },
+        {
+          "nivel": "bloqueio",
+          "regra": "segredo-vazado",
+          "arquivo": ".env.example",
+          "linha": 117,
+          "detalhe": "generic-api-key no commit 042c3fe434 (valor oculto)",
+          "ferramenta": "gitleaks"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "tests/creds.test.ts",
+          "linha": 19,
+          "detalhe": "generic-api-key no commit 042c3fe434 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "tests/keys.test.ts",
+          "linha": 30,
+          "detalhe": "generic-api-key no commit 042c3fe434 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "tests/lab-setup-keys.test.ts",
+          "linha": 53,
+          "detalhe": "generic-api-key no commit 042c3fe434 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "tests/lab-v2-sheet-models.test.ts",
+          "linha": 148,
+          "detalhe": "generic-api-key no commit 042c3fe434 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "bloqueio",
+          "regra": "segredo-vazado",
+          "arquivo": ".github/workflows/backend-tests.yml",
+          "linha": 50,
+          "detalhe": "generic-api-key no commit 934ae97b01 (valor oculto)",
+          "ferramenta": "gitleaks"
+        },
+        {
+          "nivel": "bloqueio",
+          "regra": "segredo-vazado",
+          "arquivo": ".github/workflows/backend-integration-tests.yml",
+          "linha": 109,
+          "detalhe": "generic-api-key no commit 934ae97b01 (valor oculto)",
+          "ferramenta": "gitleaks"
+        },
+        {
+          "nivel": "bloqueio",
+          "regra": "segredo-vazado",
+          "arquivo": ".github/workflows/e2e-tests.yml",
+          "linha": 107,
+          "detalhe": "generic-api-key no commit 934ae97b01 (valor oculto)",
+          "ferramenta": "gitleaks"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "desktop/backend-go/docs/CARRIER-DEPLOYMENT-PLAN.md",
+          "linha": 873,
+          "detalhe": "curl-auth-user no commit 934ae97b01 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "desktop/backend-go/docs/CARRIER-DEPLOYMENT-PLAN.md",
+          "linha": 876,
+          "detalhe": "curl-auth-user no commit 934ae97b01 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "desktop/backend-go/docs/CARRIER-DEPLOYMENT-PLAN.md",
+          "linha": 884,
+          "detalhe": "curl-auth-user no commit 934ae97b01 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "desktop/backend-go/docs/CARRIER-DEPLOYMENT-PLAN.md",
+          "linha": 895,
+          "detalhe": "curl-auth-user no commit 934ae97b01 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "desktop/backend-go/docs/OSA_API_TESTS.md",
+          "linha": 117,
+          "detalhe": "curl-auth-header no commit 934ae97b01 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "desktop/backend-go/docs/OSA_API_TESTS.md",
+          "linha": 41,
+          "detalhe": "generic-api-key no commit 934ae97b01 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "desktop/backend-go/docs/OSA_API_TESTS.md",
+          "linha": 632,
+          "detalhe": "generic-api-key no commit 934ae97b01 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "desktop/backend-go/docs/PERFORMANCE_TESTING.md",
+          "linha": 401,
+          "detalhe": "generic-api-key no commit 934ae97b01 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "desktop/backend-go/docs/QUICK_START_SECURITY.md",
+          "linha": 27,
+          "detalhe": "generic-api-key no commit 934ae97b01 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "desktop/backend-go/docs/QUICK_START_SECURITY.md",
+          "linha": 30,
+          "detalhe": "generic-api-key no commit 934ae97b01 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "desktop/backend-go/docs/QUICK_START_SECURITY.md",
+          "linha": 80,
+          "detalhe": "generic-api-key no commit 934ae97b01 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "desktop/backend-go/docs/QUICK_START_SECURITY.md",
+          "linha": 83,
+          "detalhe": "generic-api-key no commit 934ae97b01 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "desktop/backend-go/docs/REDIS_KEY_SECURITY.md",
+          "linha": 12,
+          "detalhe": "generic-api-key no commit 934ae97b01 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "desktop/backend-go/docs/REDIS_KEY_SECURITY.md",
+          "linha": 24,
+          "detalhe": "generic-api-key no commit 934ae97b01 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "desktop/backend-go/docs/REDIS_KEY_SECURITY.md",
+          "linha": 83,
+          "detalhe": "generic-api-key no commit 934ae97b01 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "desktop/backend-go/docs/REDIS_KEY_SECURITY.md",
+          "linha": 228,
+          "detalhe": "generic-api-key no commit 934ae97b01 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "desktop/backend-go/docs/REDIS_KEY_SECURITY.md",
+          "linha": 231,
+          "detalhe": "generic-api-key no commit 934ae97b01 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "desktop/backend-go/docs/REDIS_KEY_SECURITY.md",
+          "linha": 234,
+          "detalhe": "generic-api-key no commit 934ae97b01 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "desktop/backend-go/internal/handlers/osa_webhooks_test.go",
+          "linha": 327,
+          "detalhe": "generic-api-key no commit 934ae97b01 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "desktop/backend-go/internal/integrations/osa/auth_test.go",
+          "linha": 16,
+          "detalhe": "generic-api-key no commit 934ae97b01 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "desktop/backend-go/internal/integrations/osa/auth_test.go",
+          "linha": 67,
+          "detalhe": "generic-api-key no commit 934ae97b01 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "desktop/backend-go/internal/integrations/osa/auth_test.go",
+          "linha": 150,
+          "detalhe": "generic-api-key no commit 934ae97b01 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "desktop/backend-go/internal/integrations/osa/auth_test.go",
+          "linha": 168,
+          "detalhe": "generic-api-key no commit 934ae97b01 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "desktop/backend-go/internal/integrations/osa/integration_test.go",
+          "linha": 28,
+          "detalhe": "generic-api-key no commit 934ae97b01 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "desktop/backend-go/internal/integrations/osa/client_test.go",
+          "linha": 26,
+          "detalhe": "generic-api-key no commit 934ae97b01 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "desktop/backend-go/internal/integrations/osa/client_test.go",
+          "linha": 80,
+          "detalhe": "generic-api-key no commit 934ae97b01 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "desktop/backend-go/internal/integrations/osa/client_test.go",
+          "linha": 127,
+          "detalhe": "generic-api-key no commit 934ae97b01 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "desktop/backend-go/internal/integrations/osa/client_test.go",
+          "linha": 175,
+          "detalhe": "generic-api-key no commit 934ae97b01 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "desktop/backend-go/internal/integrations/osa/client_test.go",
+          "linha": 222,
+          "detalhe": "generic-api-key no commit 934ae97b01 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "desktop/backend-go/internal/integrations/osa/client_test.go",
+          "linha": 282,
+          "detalhe": "generic-api-key no commit 934ae97b01 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "desktop/backend-go/internal/integrations/osa/client_test.go",
+          "linha": 315,
+          "detalhe": "generic-api-key no commit 934ae97b01 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "desktop/backend-go/internal/integrations/osa/client_test.go",
+          "linha": 351,
+          "detalhe": "generic-api-key no commit 934ae97b01 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "desktop/backend-go/internal/logging/logger_test.go",
+          "linha": 59,
+          "detalhe": "jwt no commit 934ae97b01 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "desktop/backend-go/internal/logging/logger_test.go",
+          "linha": 121,
+          "detalhe": "generic-api-key no commit 934ae97b01 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "desktop/backend-go/internal/logging/logger_test.go",
+          "linha": 167,
+          "detalhe": "generic-api-key no commit 934ae97b01 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "desktop/backend-go/internal/logging/logger_test.go",
+          "linha": 228,
+          "detalhe": "generic-api-key no commit 934ae97b01 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "desktop/backend-go/internal/logging/logger_test.go",
+          "linha": 308,
+          "detalhe": "generic-api-key no commit 934ae97b01 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "desktop/backend-go/internal/middleware/internal_auth_test.go",
+          "linha": 34,
+          "detalhe": "generic-api-key no commit 934ae97b01 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "desktop/backend-go/internal/middleware/internal_auth_test.go",
+          "linha": 66,
+          "detalhe": "generic-api-key no commit 934ae97b01 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "desktop/backend-go/internal/middleware/internal_auth_test.go",
+          "linha": 83,
+          "detalhe": "generic-api-key no commit 934ae97b01 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "desktop/backend-go/internal/middleware/internal_auth_test.go",
+          "linha": 99,
+          "detalhe": "generic-api-key no commit 934ae97b01 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "segredo-vazado",
+          "arquivo": "desktop/backend-go/internal/middleware/internal_auth_test.go",
+          "linha": 334,
+          "detalhe": "generic-api-key no commit 934ae97b01 (valor oculto)",
+          "ferramenta": "gitleaks",
+          "regra_revisada": "em teste, exemplo ou documentação: o revisor confere se é falso (valor de exemplo)"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "@ai-sdk/provider-utils@4.0.30: GHSA-866g-f22w-33x8 @ai-sdk/provider-utils has an Uncontrolled Resource Consumption issue",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "@vitest/mocker@2.1.9: GHSA-82fw-gwwq-j7x9 Vitest: Path Traversal / Arbitrary File Read via @vitest/mocker Redirect Mock",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "@vitest/mocker@2.1.9: GHSA-qxg6-89mg-rqv8 Vitest: Code injection via unauthenticated manual mock registration",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "axios@1.19.0: GHSA-3pq3-5fj3-cg6v Axios: HTTP/2 adapter bypasses configured DNS lookup and proxy controls",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "axios@1.19.0: GHSA-44g4-m2mj-wpvx Axios: CIDR-form NO_PROXY entries are ignored, causing proxy exclusion bypass for internal IP ranges",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "axios@1.19.0: GHSA-4hqw-qxg8-jxx2 Axios: Fetch Adapter Header Injection via Inherited FormData getHeaders",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "axios@1.19.0: GHSA-542g-h47m-68v8 Axios: Denial of Service via Unhandled 'error' Event in HTTP/2 ClientHttp2Session Initialization",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "axios@1.19.0: GHSA-9fr6-4gfg-395g Axios: Prototype-Pollution Gadget in the Default Instance Allows Inherited Object.prototype.method to Override HTTP Meth",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "baseline-browser-mapping@2.10.35: GHSA-w5vr-8v7q-w6rv baseline-browser-mapping process termination on invalid input causes denial of service",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "browserslist@4.28.2: GHSA-73wf-gq98-2v4g Browserslist: Uncaught crash / prototype write via untrusted browserslist-stats.json custom stats (normalizeStats)",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "browserslist@4.28.2: GHSA-c83g-rgw3-j3cx Browserslist: Unbounded memory growth (no cache eviction) via distinct query results, leading to eventual OOM",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "esbuild@0.21.5: GHSA-67mh-4wv8-2f99 esbuild enables any website to send any requests to the development server and read the response",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "follow-redirects@1.16.0: GHSA-8r9p-f939-6h3c follow-redirects sensitiveHeaders regex escaping can expose credential headers",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "follow-redirects@1.16.0: GHSA-q3jh-wrc6-jgq8 follow-redirects array-form headers bypass cross-origin credential stripping",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "ip-address@10.5.0: GHSA-2vr4-cq9g-pvrc ip-address: no classifier recognizes the NAT64 local-use range 64:ff9b:1::/48, allowing SSRF and trust-boundary bypass",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "ip-address@10.5.0: GHSA-h3mg-xc3c-68pw ip-address: Address6 builds a parse diagnostic proportional to the input with no length bound, allowing a single long st",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "ip-address@10.5.0: GHSA-j6r3-76f7-8jcv ip-address: isInSubnet() and isHostInSubnet() compare addresses of different families as if they shared an address space",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "ip-address@10.5.0: GHSA-rpw4-54j3-4h4q ip-address: Address6.isLinkLocal() recognizes fe80::/64 rather than fe80::/10, allowing SSRF and trust-boundary bypass t",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "ip-address@10.5.0: GHSA-rxp7-6hxx-x8q5 ip-address: Address6 matches a zone identifier in quadratic time ahead of its length limit, allowing a single long strin",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "next@14.2.35: GHSA-2464-fhr4-w9xw Next.js: Unauthenticated Remote Code Execution in Image Optimization API when SVG files are used",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "next@14.2.35: GHSA-2xp9-vwfh-vxw4 Next.js: Unauthenticated Remote Code Execution in Image Optimization API when AVIF files are used",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "next@14.2.35: GHSA-36qx-fr4f-26g5 Next.js has a Middleware / Proxy bypass in Pages Router applications using i18n",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "next@14.2.35: GHSA-3g8h-86w9-wvmq Next.js's Middleware / Proxy redirects can be cache-poisoned",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "next@14.2.35: GHSA-3x4c-7xq6-9pq8 Next.js: Unbounded next/image disk cache growth can exhaust storage",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "nodemailer@9.0.1: GHSA-2x7j-588g-ccc2 Nodemailer: Quadratic (O(n²)) time complexity in addressparser allows remote denial of service via a crafted address lis",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "nodemailer@9.0.1: GHSA-39m8-27wv-hr27 Nodemailer: Quadratic (O(n^2)) DKIM header unfolding lets a large folded header cause remote denial of service during si",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "nodemailer@9.0.1: GHSA-4ffr-jq9g-5ffx Nodemailer: Quadratic backtracking in SMTP AUTH mechanism detection regexes allows pre-auth remote denial of service",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "nodemailer@9.0.1: GHSA-4g23-2xm8-66gc Nodemailer: Quadratic (O(n^2)) SMTP client reply parsing lets a malicious server or MITM cause a pre-auth remote denial ",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "nodemailer@9.0.1: GHSA-6vj9-mwq6-2f5v Nodemailer: Process-global DNS cache reuses TLS `servername` across transports, enabling cross-tenant SMTP credential di",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "postcss@8.4.31: GHSA-6g55-p6wh-862q PostCSS: Arbitrary file read and information disclosure via attacker-controlled sourceMappingURL in CSS comments",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "postcss@8.4.31: GHSA-fxqj-rqcc-2cmp PostCSS: incomplete fix of GHSA-6g55-p6wh-862q — attacker-controlled sourceMappingURL reads arbitrary .map files when `f",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "postcss@8.4.31: GHSA-qx2v-qp2m-jg93 PostCSS has XSS via Unescaped </style> in its CSS Stringify Output",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "postcss@8.4.31: GHSA-r28c-9q8g-f849 PostCSS: Path Traversal in Previous Source Map Auto-Loading (sourceMappingURL) leads to Arbitrary .map File Disclosure",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "postcss-selector-parser@6.1.4: GHSA-rj75-hqrm-r3gf PostCSS: Quadratic complexity in flat selector parsing allows CPU exhaustion",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "source-map-js@1.2.1: GHSA-68fv-2mgg-jv7q source-map-js allows event-loop denial of service through indexed source-map section offsets",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "tinypool@1.1.1: GHSA-5gmw-xhrv-c9v3 Tinypool: Prototype Pollution gadget in worker options leads to Remote Code Execution",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "tinypool@1.1.1: GHSA-85c8-ppgw-ccpr Tinypool: Prototype Pollution Gadget to RCE in run() options",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "undici@7.30.0: GHSA-2m5v-pch6-74hx undici vulnerable to TLS certificate validation bypass via dropped tls options in Agent",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "undici@7.30.0: GHSA-4qv8-2p9j-2685 undici vulnerable to Denial of Service via unbounded memory in the EventSource parser",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "undici@7.30.0: GHSA-4w7w-5xrc-9h26 undici vulnerable to cache poisoning and cross-user disclosure via cross-origin redirects",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "undici@7.30.0: GHSA-55wc-3pg8-jfw6 undici vulnerable to Denial of Service via unhandled exception in the decompress interceptor",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "undici@7.30.0: GHSA-9fm3-97px-rjf6 undici WebSocket client vulnerable to Denial of Service via unbounded automatic PONG buffering",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "vite@5.4.21: GHSA-4w7w-66w2-5vf9 Vite Vulnerable to Path Traversal in Optimized Deps `.map` Handling",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "vite@5.4.21: GHSA-587h-7wmj-h5pm launch-editor: `fs.existsSync()` existence check can be bypassed on Windows",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "vite@5.4.21: GHSA-698v-4r3x-3vcv launch-editor: escapeCmdArgs() omits % escaping on Windows",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "vite@5.4.21: GHSA-9jrq-w75r-8gcw Vite: Cross origin script execution through Vite custom middleware",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "vite@5.4.21: GHSA-fx2h-pf6j-xcff vite: `server.fs.deny` bypass on Windows alternate paths",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "vitest@2.1.9: GHSA-5xrq-8626-4rwp When Vitest UI server is listening, arbitrary file can be read and executed",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "vitest@2.1.9: GHSA-82fw-gwwq-j7x9 Vitest: Path Traversal / Arbitrary File Read via @vitest/mocker Redirect Mock",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "dependencia-vulneravel",
+          "arquivo": "/package-lock.json",
+          "detalhe": "zod@3.25.76: GHSA-mrhx-c7xc-m3w5 Zod can exhaust memory while validating oversized constrained collections",
+          "ferramenta": "dependencias",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "guarddog:capability-filesystem-delete",
+          "arquivo": "",
+          "detalhe": "[{\"location\":\"app/api/lab/setup/pause/route.ts:27\",\"code\":\"...f (b.paused) fs.writeFileSync(file, `Paused from Setup at ${new Date().toISOString()}\\\\n`);\\n  else for (const d of dirs) fs.rmSync(path.j",
+          "ferramenta": "guarddog",
+          "regra_revisada": "função esperada da ferramenta: o revisor confere se combina com o que ela faz"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "guarddog:capability-filesystem-read",
+          "arquivo": "",
+          "detalhe": "[{\"location\":\"app/api/lab/frames/route.ts:25\",\"code\":\"  const abs = resolveSheet(rel);\\n  if (fs.existsSync(abs)) return new Response(new Uint8Array(fs.readFileSync(abs)), { headers: { 'content-type':",
+          "ferramenta": "guarddog",
+          "regra_revisada": "função esperada da ferramenta: o revisor confere se combina com o que ela faz"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "guarddog:capability-filesystem-write-executable",
+          "arquivo": "",
+          "detalhe": "[{\"location\":\"lib/demo/brain.ts:247\",\"code\":\"  );\\n  fs.chmodSync(bin, 0o755);\\n  return pages;\\n}\",\"match\":\"fs.chmodSync(\",\"message\":\"Detects writing executable files or changing file permissions to ",
+          "ferramenta": "guarddog",
+          "regra_revisada": "função esperada da ferramenta: o revisor confere se combina com o que ela faz"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "guarddog:capability-network-download",
+          "arquivo": "",
+          "detalhe": "[{\"location\":\"middleware.ts:45\",\"code\":\"  try {\\n    const res = await fetch(`${probeOrigin(req)}/api/auth/check`, {\\n      headers: cookie ? { cookie: `${SESSION_COOKIE}=${encodeURIComponent(cookie)}",
+          "ferramenta": "guarddog",
+          "regra_revisada": "função esperada da ferramenta: o revisor confere se combina com o que ela faz"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "guarddog:capability-network-outbound",
+          "arquivo": "",
+          "detalhe": "[{\"location\":\"middleware.ts:45\",\"code\":\"  try {\\n    const res = await fetch(`${probeOrigin(req)}/api/auth/check`, {\\n      headers: cookie ? { cookie: `${SESSION_COOKIE}=${encodeURIComponent(cookie)}",
+          "ferramenta": "guarddog",
+          "regra_revisada": "função esperada da ferramenta: o revisor confere se combina com o que ela faz"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "guarddog:capability-process-schedule",
+          "arquivo": "",
+          "detalhe": "[{\"location\":\"components/adpilot/AdLibrary.tsx:230\",\"code\":\"            if (!p) return;\\n            window.clearTimeout(p.timer);\\n            pending.current.delete(entry.id);\\n            setWatchl",
+          "ferramenta": "guarddog",
+          "regra_revisada": "função esperada da ferramenta: o revisor confere se combina com o que ela faz"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "guarddog:capability-process-spawn",
+          "arquivo": "",
+          "detalhe": "[{\"location\":\"app/api/lab/sources/route.ts:23\",\"code\":\"  let v = raw.trim();\\n  const m = /^https?:\\\\/\\\\/(?:www\\\\.)?(?:x|twitter)\\\\.com\\\\/([^/?#]+)/i.exec(v);\\n  if (m) v = m[1];\\n  v = v.replace(/^@/",
+          "ferramenta": "guarddog",
+          "regra_revisada": "função esperada da ferramenta: o revisor confere se combina com o que ela faz"
+        },
+        {
+          "nivel": "bloqueio",
+          "regra": "guarddog:threat-filesystem-autostart",
+          "arquivo": "",
+          "detalhe": "[{\"location\":\"lib/lab/setup/agent.ts:55\",\"code\":\"export const plistTarget = (home: string) => path.join(home, 'Library', 'LaunchAgents', `${LAB_AGENT_LABEL}.plist`);\\n\\n/** install: returns the exit c",
+          "ferramenta": "guarddog"
+        },
+        {
+          "nivel": "bloqueio",
+          "regra": "guarddog:threat-filesystem-read",
+          "arquivo": "",
+          "detalhe": "[{\"location\":\"app/api/adscout/mine/route.ts:53\",\"code\":\"    return NextResponse.json(\\n      { ok: false, error: 'Foreplay not configured — set FOREPLAY_API_KEY in .env.local' },\\n      { status: 503 ",
+          "ferramenta": "guarddog"
+        },
+        {
+          "nivel": "bloqueio",
+          "regra": "guarddog:threat-process-spawn-silent",
+          "arquivo": "",
+          "detalhe": "[{\"location\":\"lib/lab/setup/run-now.ts:14\",\"code\":\"  const tsx = path.join(process.cwd(), 'node_modules', '.bin', 'tsx');\\n  const child = spawn(tsx, ['scripts/lab-sync.ts', ...args], { cwd: process.c",
+          "ferramenta": "guarddog"
+        },
+        {
+          "nivel": "bloqueio",
+          "regra": "guarddog:threat-runtime-environment-read",
+          "arquivo": "",
+          "detalhe": "[{\"location\":\"app/api/webhooks/manychat/route.ts:21\",\"code\":\"export async function POST(request: Request): Promise<Response> {\\n  const secret = process.env.MANYCHAT_WEBHOOK_SECRET;\\n  if (!secret) {\\",
+          "ferramenta": "guarddog"
+        },
+        {
+          "nivel": "bloqueio",
+          "regra": "guarddog:threat-runtime-obfuscation-unicode",
+          "arquivo": "",
+          "detalhe": "[{\"location\":\"tests/g-tokens.test.ts:214\",\"code\":\"    it(`${a} × ${m}: categorical neighbours are distinct (ΔE ≥ 20)`, () => {\\n      for (let n = 1; n < 11; n++) {\\n        const d = deltaE(opaque(e,",
+          "ferramenta": "guarddog"
+        },
+        {
+          "nivel": "bloqueio",
+          "regra": "guarddog:threat-runtime-system-info",
+          "arquivo": "",
+          "detalhe": "[{\"location\":\"lib/usage.ts:191\",\"code\":\"export function machineName(): string {\\n  return (process.env.GLADOS_USAGE_MACHINE || os.hostname().replace(/\\\\.local$/i, '')).slice(0, 120) || 'this machine';",
+          "ferramenta": "guarddog"
+        }
+      ],
+      "tamanho_mb": 60,
+      "licenca": {
+        "spdx": "MIT",
+        "atencao": false
+      },
+      "incompletas": [],
+      "bloqueios": 10,
+      "revisar": 156,
+      "script": "REPROVADO",
+      "candidato": {
+        "nome": "Bennettxai/FounderOS",
+        "url": "https://github.com/Bennettxai/FounderOS",
+        "descricao": "An open-source, single-operator business command center: run a one-person operated company as AI-assisted departments (comms, funnel, social, finances, agents, and a knowledge graph) from one live dashboard.",
+        "estrelas": 1257,
+        "forks": 353,
+        "issues_abertas": 6,
+        "linguagem": "TypeScript",
+        "topicos": [
+          "ai-agents",
+          "dashboard",
+          "founder-os",
+          "nextjs",
+          "open-source",
+          "operator-os",
+          "personal-productivity",
+          "sqlite",
+          "tailwindcss",
+          "typescript"
+        ],
+        "licenca": "MIT",
+        "arquivado": false,
+        "fork": false,
+        "criado": "2026-07-07T11:58:37Z",
+        "ultimo_push": "2026-10-23T20:46:39Z",
+        "ramo": "main",
+        "tamanho_kb": 39892,
+        "dono": {
+          "login": "Bennettxai",
+          "tipo": "User"
+        }
+      },
+      "cache": null
+    }
+  ],
+  "minutos": 0.9,
+  "nao_auditados": []
+}
