@@ -1,0 +1,65 @@
+{
+  "id": "2026-10-28-analise-louisedesadeleer-clipify-002413",
+  "resultados": [
+    {
+      "nome": "louisedesadeleer/clipify",
+      "url": "https://github.com/louisedesadeleer/clipify",
+      "data": "2026-10-28T00:24:13.299Z",
+      "commit": "5f6b75e6c0bfdce3cc9c78b850a67e23d65d9783",
+      "ferramentas": {
+        "garimbot-scanner": {
+          "ok": true,
+          "arquivos": 10
+        },
+        "gitleaks": {
+          "ok": true
+        },
+        "dependencias": {
+          "ok": true,
+          "metodo": "osv-scanner",
+          "pacotes": 0
+        },
+        "semgrep": {
+          "ok": true
+        },
+        "guarddog": {
+          "ok": true
+        }
+      },
+      "achados": [],
+      "tamanho_mb": 2,
+      "licenca": {
+        "spdx": "MIT",
+        "atencao": false
+      },
+      "incompletas": [],
+      "bloqueios": 0,
+      "revisar": 0,
+      "script": "PARA_REVISAO",
+      "candidato": {
+        "nome": "louisedesadeleer/clipify",
+        "url": "https://github.com/louisedesadeleer/clipify",
+        "descricao": "Claude Code skill: turn long videos into social-ready clips. Auto-find funny moments, cut, reframe to 9:16 with face-tracking, and burn opus-style captions.",
+        "estrelas": 613,
+        "forks": 68,
+        "issues_abertas": 3,
+        "linguagem": "Python",
+        "topicos": [],
+        "licenca": "MIT",
+        "arquivado": false,
+        "fork": false,
+        "criado": "2026-05-05T13:11:24Z",
+        "ultimo_push": "2026-08-24T16:24:43Z",
+        "ramo": "main",
+        "tamanho_kb": 1146,
+        "dono": {
+          "login": "louisedesadeleer",
+          "tipo": "User"
+        }
+      },
+      "cache": null
+    }
+  ],
+  "minutos": 0.1,
+  "nao_auditados": []
+}

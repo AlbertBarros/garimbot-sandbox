@@ -1,0 +1,33 @@
+{
+  "id": "2026-10-28-analise-louisedesadeleer-clipify-002413",
+  "tema": null,
+  "titulo": "Análise de louisedesadeleer/clipify",
+  "termos": [],
+  "data": "2026-10-28T00:24:13.295Z",
+  "modo": "economico",
+  "total": 1,
+  "aprovados": [
+    {
+      "nome": "louisedesadeleer/clipify",
+      "url": "https://github.com/louisedesadeleer/clipify",
+      "descricao": "Claude Code skill: turn long videos into social-ready clips. Auto-find funny moments, cut, reframe to 9:16 with face-tracking, and burn opus-style captions.",
+      "estrelas": 613,
+      "forks": 68,
+      "issues_abertas": 3,
+      "linguagem": "Python",
+      "topicos": [],
+      "licenca": "MIT",
+      "arquivado": false,
+      "fork": false,
+      "criado": "2026-05-05T13:11:24Z",
+      "ultimo_push": "2026-08-24T16:24:43Z",
+      "ramo": "main",
+      "tamanho_kb": 1146,
+      "dono": {
+        "login": "louisedesadeleer",
+        "tipo": "User"
+      }
+    }
+  ],
+  "descartados": []
+}
