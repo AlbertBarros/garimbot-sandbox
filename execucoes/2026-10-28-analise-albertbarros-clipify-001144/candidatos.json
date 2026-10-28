@@ -1,0 +1,38 @@
+{
+  "id": "2026-10-28-analise-albertbarros-clipify-001144",
+  "tema": null,
+  "titulo": "Análise de AlbertBarros/clipify",
+  "termos": [],
+  "data": "2026-10-28T00:11:44.380Z",
+  "modo": "economico",
+  "total": 1,
+  "aprovados": [
+    {
+      "nome": "AlbertBarros/clipify",
+      "url": "https://github.com/AlbertBarros/clipify",
+      "descricao": "ACHA MELHORE TRCHOS DE UM VIDEO",
+      "estrelas": 0,
+      "forks": 0,
+      "issues_abertas": 0,
+      "linguagem": null,
+      "topicos": [],
+      "licenca": "MIT",
+      "arquivado": false,
+      "fork": true,
+      "criado": "2026-10-24T19:22:53Z",
+      "ultimo_push": "2026-08-24T16:24:43Z",
+      "ramo": "main",
+      "tamanho_kb": 1146,
+      "dono": {
+        "login": "AlbertBarros",
+        "tipo": "User"
+      }
+    }
+  ],
+  "descartados": [
+    {
+      "nome": "AlbertBarros/clipify",
+      "motivo": "fork"
+    }
+  ]
+}
