@@ -1,0 +1,231 @@
+{
+  "id": "2026-10-28-analise-danielgatis-rembg-190510",
+  "resultados": [
+    {
+      "nome": "danielgatis/rembg",
+      "url": "https://github.com/danielgatis/rembg",
+      "data": "2026-10-28T19:05:10.310Z",
+      "commit": "c5b48b0417a0254df7d461efa14573597f369a83",
+      "ferramentas": {
+        "garimbot-scanner": {
+          "ok": true,
+          "arquivos": 129
+        },
+        "gitleaks": {
+          "ok": true
+        },
+        "dependencias": {
+          "ok": true,
+          "metodo": "osv-scanner",
+          "pacotes": 0
+        },
+        "semgrep": {
+          "ok": true
+        },
+        "guarddog": {
+          "ok": true
+        }
+      },
+      "achados": [
+        {
+          "nivel": "revisar",
+          "regra": "workflow-perigoso",
+          "arquivo": ".github/workflows/lint_python.yml",
+          "linha": 19,
+          "detalhe": "action de terceiro sem versão fixa (SHA): snok/install-poetry@v1",
+          "ferramenta": "garimbot-scanner",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "workflow-perigoso",
+          "arquivo": ".github/workflows/publish_docker.yml",
+          "linha": 21,
+          "detalhe": "action de terceiro sem versão fixa (SHA): docker/metadata-action@v5",
+          "ferramenta": "garimbot-scanner",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "workflow-perigoso",
+          "arquivo": ".github/workflows/publish_docker.yml",
+          "linha": 36,
+          "detalhe": "action de terceiro sem versão fixa (SHA): docker/setup-qemu-action@v3",
+          "ferramenta": "garimbot-scanner",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "workflow-perigoso",
+          "arquivo": ".github/workflows/publish_docker.yml",
+          "linha": 39,
+          "detalhe": "action de terceiro sem versão fixa (SHA): docker/setup-buildx-action@v3",
+          "ferramenta": "garimbot-scanner",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "workflow-perigoso",
+          "arquivo": ".github/workflows/publish_docker.yml",
+          "linha": 42,
+          "detalhe": "action de terceiro sem versão fixa (SHA): docker/login-action@v3",
+          "ferramenta": "garimbot-scanner",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "workflow-perigoso",
+          "arquivo": ".github/workflows/publish_docker.yml",
+          "linha": 48,
+          "detalhe": "action de terceiro sem versão fixa (SHA): docker/build-push-action@v6",
+          "ferramenta": "garimbot-scanner",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "workflow-perigoso",
+          "arquivo": ".github/workflows/publish_pypi.yml",
+          "linha": 20,
+          "detalhe": "action de terceiro sem versão fixa (SHA): snok/install-poetry@v1",
+          "ferramenta": "garimbot-scanner",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "workflow-perigoso",
+          "arquivo": ".github/workflows/windows_installer.yml",
+          "linha": 21,
+          "detalhe": "action de terceiro sem versão fixa (SHA): Minionguyjpro/Inno-Setup-Action@v1.2.2",
+          "ferramenta": "garimbot-scanner",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "workflow-perigoso",
+          "arquivo": ".github/workflows/windows_installer.yml",
+          "linha": 26,
+          "detalhe": "action de terceiro sem versão fixa (SHA): Minionguyjpro/Inno-Setup-Action@v1.2.2",
+          "ferramenta": "garimbot-scanner",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "workflow-perigoso",
+          "arquivo": ".github/workflows/windows_installer.yml",
+          "linha": 31,
+          "detalhe": "action de terceiro sem versão fixa (SHA): svenstaro/upload-release-action@v2",
+          "ferramenta": "garimbot-scanner",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "workflow-perigoso",
+          "arquivo": ".github/workflows/windows_installer.yml",
+          "linha": 39,
+          "detalhe": "action de terceiro sem versão fixa (SHA): svenstaro/upload-release-action@v2",
+          "ferramenta": "garimbot-scanner",
+          "regra_revisada": "comum em projeto grande: o revisor confere se afeta o nosso uso"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "semgrep:dynamic-urllib-use-detected",
+          "arquivo": "rembg/sessions/atlascloud.py",
+          "linha": 83,
+          "detalhe": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib call",
+          "ferramenta": "semgrep"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "semgrep:dynamic-urllib-use-detected",
+          "arquivo": "rembg/sessions/atlascloud.py",
+          "linha": 190,
+          "detalhe": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib call",
+          "ferramenta": "semgrep"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "semgrep:dynamic-urllib-use-detected",
+          "arquivo": "rembg/sessions/withoutbg.py",
+          "linha": 114,
+          "detalhe": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib call",
+          "ferramenta": "semgrep"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "guarddog:capability-filesystem-delete",
+          "arquivo": "",
+          "detalhe": "[{\"location\":\"rembg/commands/m_command.py:127\",\"code\":\"        if delete_source:\\n            os.remove(src)\\n\\n    for src in reclaimable:\",\"match\":\"os.remove(\",\"message\":\"Detects file/directory dele",
+          "ferramenta": "guarddog",
+          "regra_revisada": "função esperada da ferramenta: o revisor confere se combina com o que ela faz"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "guarddog:capability-filesystem-read",
+          "arquivo": "",
+          "detalhe": "[{\"location\":\"rembg/commands/i_command.py:130\",\"code\":\"    output.write(remove(input.read(), session=new_session(model, **kwargs), **kwargs))\",\"match\":\".read(\",\"message\":\"Detects filesystem read capab",
+          "ferramenta": "guarddog",
+          "regra_revisada": "função esperada da ferramenta: o revisor confere se combina com o que ela faz"
+        },
+        {
+          "nivel": "revisar",
+          "regra": "guarddog:capability-network-outbound",
+          "arquivo": "",
+          "detalhe": "[{\"location\":\"rembg/commands/s_command.py:331\",\"code\":\"        try:\\n            resolved = socket.getaddrinfo(host, None)\\n        except Exception:\\n            raise ValueError(\\\"Could not resolve ",
+          "ferramenta": "guarddog",
+          "regra_revisada": "função esperada da ferramenta: o revisor confere se combina com o que ela faz"
+        },
+        {
+          "nivel": "bloqueio",
+          "regra": "guarddog:threat-filesystem-read",
+          "arquivo": "",
+          "detalhe": "[{\"location\":\"tests/test_model_home.py:93\",\"code\":\"    with pytest.raises(ValueError):\\n        BaseSession.validate_model_path(model_path=\\\"/etc/passwd\\\")\",\"match\":\"/etc/passwd\",\"message\":\"Detects ac",
+          "ferramenta": "guarddog"
+        },
+        {
+          "nivel": "bloqueio",
+          "regra": "guarddog:threat-runtime-environment-read",
+          "arquivo": "",
+          "detalhe": "[{\"location\":\"rembg/sessions/atlascloud.py:56\",\"code\":\"        self.model_name = model_name\\n        api_key = kwargs.get(\\\"api_key\\\") or os.getenv(\\\"ATLASCLOUD_API_KEY\\\")\\n        if not isinstance(a",
+          "ferramenta": "guarddog"
+        }
+      ],
+      "tamanho_mb": 113,
+      "licenca": {
+        "spdx": "MIT",
+        "atencao": false
+      },
+      "incompletas": [],
+      "bloqueios": 2,
+      "revisar": 17,
+      "script": "REPROVADO",
+      "candidato": {
+        "nome": "danielgatis/rembg",
+        "url": "https://github.com/danielgatis/rembg",
+        "descricao": "Rembg is a tool to remove images background",
+        "estrelas": 25216,
+        "forks": 2454,
+        "issues_abertas": 0,
+        "linguagem": "Python",
+        "topicos": [
+          "background-removal",
+          "image-processing",
+          "python"
+        ],
+        "licenca": "MIT",
+        "arquivado": false,
+        "fork": false,
+        "criado": "2020-08-10T14:38:24Z",
+        "ultimo_push": "2026-10-21T21:17:51Z",
+        "ramo": "main",
+        "tamanho_kb": 89561,
+        "dono": {
+          "login": "danielgatis",
+          "tipo": "User"
+        }
+      },
+      "cache": null
+    }
+  ],
+  "minutos": 0.3,
+  "nao_auditados": []
+}

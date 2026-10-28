@@ -1,0 +1,37 @@
+{
+  "id": "2026-10-28-analise-danielgatis-rembg-190510",
+  "tema": null,
+  "titulo": "Análise de danielgatis/rembg",
+  "termos": [],
+  "data": "2026-10-28T19:05:10.306Z",
+  "modo": "completo",
+  "total": 1,
+  "aprovados": [
+    {
+      "nome": "danielgatis/rembg",
+      "url": "https://github.com/danielgatis/rembg",
+      "descricao": "Rembg is a tool to remove images background",
+      "estrelas": 25216,
+      "forks": 2454,
+      "issues_abertas": 0,
+      "linguagem": "Python",
+      "topicos": [
+        "background-removal",
+        "image-processing",
+        "python"
+      ],
+      "licenca": "MIT",
+      "arquivado": false,
+      "fork": false,
+      "criado": "2020-08-10T14:38:24Z",
+      "ultimo_push": "2026-10-21T21:17:51Z",
+      "ramo": "main",
+      "tamanho_kb": 89561,
+      "dono": {
+        "login": "danielgatis",
+        "tipo": "User"
+      }
+    }
+  ],
+  "descartados": []
+}
